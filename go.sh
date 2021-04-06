@@ -1,0 +1,1 @@
+gssg --domain http://localhost:2368 --url http://www.acmconsulting.eu --dest .
