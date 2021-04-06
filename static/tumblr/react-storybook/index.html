@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React Storybook</title>
+    <link rel="stylesheet" href="/assets/built/screen.css?v=cdd71b73d3">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap">
+
+    <link rel="canonical" href="http://localhost:2368/tumblr/react-storybook/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="acmConsulting" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="React Storybook" />
+    <meta property="og:description" content="React StorybookWe&amp;rsquo;ve been using this at work - its so much more than it seems. Try it. The way you can build components in an isolated way really promotes the best of react.  We&amp;rsquo;ve been using it in conjunction with Atomic Design (http://bradfrost.com/blog/" />
+    <meta property="og:url" content="http://localhost:2368/tumblr/react-storybook/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDE1fHxzdG9yeSUyMGJvb2t8ZW58MHx8fHwxNjE3NzA1NzI4&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000" />
+    <meta property="article:published_time" content="2016-09-22T08:15:20.000Z" />
+    <meta property="article:modified_time" content="2021-04-06T10:42:23.000Z" />
+    <meta property="article:tag" content="Tumblr" />
+    <meta property="article:tag" content="Software Development" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="React Storybook" />
+    <meta name="twitter:description" content="React StorybookWe&amp;rsquo;ve been using this at work - its so much more than it seems. Try it. The way you can build components in an isolated way really promotes the best of react.  We&amp;rsquo;ve been using it in conjunction with Atomic Design (http://bradfrost.com/blog/" />
+    <meta name="twitter:url" content="http://localhost:2368/tumblr/react-storybook/" />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDE1fHxzdG9yeSUyMGJvb2t8ZW58MHx8fHwxNjE3NzA1NzI4&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Alex McFadyen" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Tumblr, Software Development" />
+    <meta name="twitter:site" content="@a_c_m" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="1333" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "acmConsulting",
+        "url": "http://localhost:2368/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 48,
+            "height": 48
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Alex McFadyen",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/content/images/2021/03/1558123564131.jpg",
+            "width": 500,
+            "height": 500
+        },
+        "url": "http://localhost:2368/author/a_c_m/",
+        "sameAs": []
+    },
+    "headline": "React Storybook",
+    "url": "http://localhost:2368/tumblr/react-storybook/",
+    "datePublished": "2016-09-22T08:15:20.000Z",
+    "dateModified": "2021-04-06T10:42:23.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDE1fHxzdG9yeSUyMGJvb2t8ZW58MHx8fHwxNjE3NzA1NzI4&ixlib=rb-1.2.1&q=80&w=2000",
+        "width": 2000,
+        "height": 1333
+    },
+    "keywords": "Tumblr, Software Development",
+    "description": "React Storybook [https://getstorybook.io/]\n\nWe’ve been using this at work - its so much more than it seems. Try it. The way\nyou can build components in an isolated way really promotes the best of react.\n\nWe’ve been using it in conjunction with Atomic Design (\nhttp://bradfrost.com/blog/post/atomic-web-design/) and it seems to be an\nexcellent marriage.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 4.1" />
+    <link rel="alternate" type="application/rss+xml" title="acmConsulting" href="" />
+    <script defer src="https://unpkg.com/@tryghost/portal@~1.0.0/umd/portal.min.js" data-ghost="http://localhost:2368/"></script><style> .gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39022512-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-39022512-1');
+</script>
+<style>:root {--ghost-accent-color: #008929;}</style>
+</head>
+
+<body class="post-template tag-tumblr tag-software-development">
+    <div class="site">
+        <header id="site-header" class="site-header">
+    <div class="header-inner">
+        <div class="header-brand">
+            <a class="logo" href="http://localhost:2368">
+                    <span class="logo-text">acmConsulting</span>
+            </a>
+
+            <div class="burger">
+                <div class="burger-bar"></div>
+                <div class="burger-bar"></div>
+            </div>
+        </div>
+
+            <nav class="header-nav">
+                        <a class="menu-item menu-item-home" href="http://localhost:2368/">Home</a>
+        <a class="menu-item menu-item-about-me" href="http://localhost:2368/author/a_c_m/">About Me</a>
+
+            </nav>
+
+        <div class="header-actions">
+            <div class="social">
+    <a class="social-item social-item-linkedin"
+        href="https://www.linkedin.com/in/alexmcfadyen/" target="_blank"
+        rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn icon</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>    </a>
+
+    <a class="social-item social-item-github"
+        href="https://github.com/a-c-m" target="_blank"
+        rel="noopener noreferrer" aria-label="Github">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>    </a>
+
+
+        <a class="social-item social-item-twitter"
+            href="https://twitter.com/a_c_m" target="_blank"
+            rel="noopener noreferrer" aria-label="Twitter">
+            <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>        </a>
+
+    <a class="social-item social-item-rss"
+        href="/rss" target="_blank"
+        rel="noopener noreferrer" aria-label="RSS">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+    </a>
+</div>
+        </div>
+    </div>
+</header>
+
+        <div class="site-content">
+            
+<div class="content-area">
+    <main class="site-main">
+            <article class="single post tag-tumblr tag-software-development">
+    <header class="single-header kg-canvas">
+            <div class="single-meta">
+                <span class="single-meta-item single-meta-date">
+                    <time datetime="2016-09-22">
+                        Sep 22, 2016
+                    </time>
+                </span>
+
+                <span class="single-meta-item single-meta-length">
+                    1 min read
+                </span>
+
+                    <span class="single-meta-item single-meta-tag">
+                        <a class="post-tag post-tag-tumblr" href="/tag/tumblr/">Tumblr</a>
+                    </span>
+            </div>
+
+        <h1 class="single-title">React Storybook</h1>
+
+
+                <div class="single-media kg-width-wide">
+                    <img srcset="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDE1fHxzdG9yeSUyMGJvb2t8ZW58MHx8fHwxNjE3NzA1NzI4&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 400w,
+https://images.unsplash.com/photo-1457369804613-52c61a468e7d?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDE1fHxzdG9yeSUyMGJvb2t8ZW58MHx8fHwxNjE3NzA1NzI4&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 750w,
+https://images.unsplash.com/photo-1457369804613-52c61a468e7d?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDE1fHxzdG9yeSUyMGJvb2t8ZW58MHx8fHwxNjE3NzA1NzI4&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 960w,
+https://images.unsplash.com/photo-1457369804613-52c61a468e7d?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDE1fHxzdG9yeSUyMGJvb2t8ZW58MHx8fHwxNjE3NzA1NzI4&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 1140w" sizes="(min-width: 1023px) 920px, calc(90vw)" src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDE1fHxzdG9yeSUyMGJvb2t8ZW58MHx8fHwxNjE3NzA1NzI4&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000" alt="React Storybook">
+                </div>
+    </header>
+
+    <div class="single-content kg-canvas u-text-format">
+        <!--kg-card-begin: html--><strong><a href="https://getstorybook.io/">React Storybook</a></strong><p><p>We&rsquo;ve been using this at work - its so much more than it seems. Try it. The way you can build components in an isolated way really promotes the best of react.</p>
+
+<p>We&rsquo;ve been using it in conjunction with Atomic Design (<a href="http://bradfrost.com/blog/post/atomic-web-design/" target="_blank">http://bradfrost.com/blog/post/atomic-web-design/</a>) and it seems to be an excellent marriage.</p></p><!--kg-card-end: html-->
+    </div>
+
+        <footer class="single-footer container small">
+            <div class="single-footer-left">
+                    <div class="navigation navigation-previous">
+                        <a class="navigation-link" href="/tumblr/wavenet-a-generative-model-for-raw-audio/" aria-label="Previous post">
+                            <span class="navigation-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M26.667 14.667v2.667h-16L18 24.667l-1.893 1.893L5.547 16l10.56-10.56L18 7.333l-7.333 7.333h16z"></path>
+</svg></span>
+                        </a>
+                    </div>
+            </div>
+
+            <div class="single-footer-middle">
+                <div class="single-footer-top">
+                    <h3 class="single-footer-title">Published by:</h3>
+                    <div class="author-list">
+                            <a href="/author/a_c_m/" title="Alex McFadyen">
+                                <div class="author-image-placeholder u-placeholder square">
+                                    <img class="author-image u-object-fit" src="/content/images/size/w150/2021/03/1558123564131.jpg" alt="Alex McFadyen" loading="lazy">
+                                </div>
+                                <div class="author-details">
+                                    <div class="author-name">Alex McFadyen</div>
+                                    <div class="author-meta">London, UK</div>
+                                </div>
+                            </a>
+                    </div>
+                </div>
+
+                <div class="single-footer-bottom">
+                    <div class="share">
+    <a class="share-link share-link-twitter"
+        href="https://twitter.com/intent/tweet?url=http://localhost:2368/tumblr/react-storybook/&text=React%20Storybook"
+        target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>        Tweet
+    </a>
+    <a class="share-link share-link-linkedin"
+        href="http://www.linkedin.com/shareArticle?mini=true&url=http://localhost:2368/tumblr/react-storybook/&title=React%20Storybook"
+        target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn icon</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>        Share
+    </a>
+    <a class="share-link share-link-ycombinator"
+        href="https://news.ycombinator.com/submitlink?u=http://localhost:2368/tumblr/react-storybook/&t=React%20Storybook"
+        target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Y Combinator icon</title><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>        Share
+    </a>
+    <a class="share-link share-link-reddit"
+        href="http://www.reddit.com/submit?url=http://localhost:2368/tumblr/react-storybook/&title=React%20Storybook"
+        target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Reddit icon</title><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>        Share
+    </a>
+</div>                </div>
+            </div>
+
+            <div class="single-footer-right">
+                    <div class="navigation navigation-next">
+                        <a class="navigation-link" href="/tumblr/how-does-homeopathy-work/" aria-label="Next post">
+                            <span class="navigation-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M5.333 14.667v2.667h16L14 24.667l1.893 1.893L26.453 16 15.893 5.44 14 7.333l7.333 7.333h-16z"></path>
+</svg></span>
+                        </a>
+                    </div>
+            </div>
+        </footer>
+</article>                    <section class="related-wrapper">
+            <div class="container small">
+                <h3 class="related-title">You might also like...</h3>
+                <div class="post-feed related-feed">
+                        <article class="feed post featured" data-month="March 2021">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Mar
+        </div>
+        <div class="feed-calendar-day">
+            11
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="https://images.unsplash.com/photo-1506704810770-7e9bbab1094b?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDZ8fHN0b3B8ZW58MHx8fHwxNjE3MjcxMzM0&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 400w,
+https://images.unsplash.com/photo-1506704810770-7e9bbab1094b?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDZ8fHN0b3B8ZW58MHx8fHwxNjE3MjcxMzM0&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 750w,
+https://images.unsplash.com/photo-1506704810770-7e9bbab1094b?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDZ8fHN0b3B8ZW58MHx8fHwxNjE3MjcxMzM0&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 960w,
+https://images.unsplash.com/photo-1506704810770-7e9bbab1094b?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDZ8fHN0b3B8ZW58MHx8fHwxNjE3MjcxMzM0&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="https://images.unsplash.com/photo-1506704810770-7e9bbab1094b?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDZ8fHN0b3B8ZW58MHx8fHwxNjE3MjcxMzM0&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000"
+                alt="#NoEstimates?" loading="lazy">
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">#NoEstimates?</h2>
+            <div class="feed-excerpt">Some people think you don't need to estimate software development work. I am not so sure.</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2021-03-11">
+                Mar 11, 2021
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    6 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/post/no-estimates/" aria-label="#NoEstimates?"></a>
+</article>                        <article class="feed post featured" data-month="March 2021">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Mar
+        </div>
+        <div class="feed-calendar-day">
+            08
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDV8fGNvZGV8ZW58MHx8fHwxNjE3MjcwNjUw&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 400w,
+https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDV8fGNvZGV8ZW58MHx8fHwxNjE3MjcwNjUw&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 750w,
+https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDV8fGNvZGV8ZW58MHx8fHwxNjE3MjcwNjUw&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 960w,
+https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDV8fGNvZGV8ZW58MHx8fHwxNjE3MjcwNjUw&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDV8fGNvZGV8ZW58MHx8fHwxNjE3MjcwNjUw&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000"
+                alt="Code Metrics" loading="lazy">
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">Code Metrics</h2>
+            <div class="feed-excerpt">Q: "How can we measure a software development teams performance?" A: "Metrics!"</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2021-03-08">
+                Mar 8, 2021
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    5 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/post/code-metrics/" aria-label="Code Metrics"></a>
+</article>                        <article class="feed post" data-month="March 2021">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Mar
+        </div>
+        <div class="feed-calendar-day">
+            04
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDJ8fGJvb2tzfGVufDB8fHx8MTYxNzcwNTQyMA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 400w,
+https://images.unsplash.com/photo-1481627834876-b7833e8f5570?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDJ8fGJvb2tzfGVufDB8fHx8MTYxNzcwNTQyMA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 750w,
+https://images.unsplash.com/photo-1481627834876-b7833e8f5570?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDJ8fGJvb2tzfGVufDB8fHx8MTYxNzcwNTQyMA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 960w,
+https://images.unsplash.com/photo-1481627834876-b7833e8f5570?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDJ8fGJvb2tzfGVufDB8fHx8MTYxNzcwNTQyMA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDJ8fGJvb2tzfGVufDB8fHx8MTYxNzcwNTQyMA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000"
+                alt="Insightful videos/books" loading="lazy">
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">Insightful videos/books</h2>
+            <div class="feed-excerpt">What books or videos have you watched which were aha moments or step changes in your thinking? I&rsquo;m</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2021-03-04">
+                Mar 4, 2021
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    1 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/tumblr/insightful-videosbooks/" aria-label="Insightful videos/books"></a>
+</article>                        <article class="feed post" data-month="February 2021">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Feb
+        </div>
+        <div class="feed-calendar-day">
+            26
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHRlY2hub2xvZ3l8ZW58MHx8fHwxNjE3NzA1Mzcx&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 400w,
+https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHRlY2hub2xvZ3l8ZW58MHx8fHwxNjE3NzA1Mzcx&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 750w,
+https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHRlY2hub2xvZ3l8ZW58MHx8fHwxNjE3NzA1Mzcx&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 960w,
+https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHRlY2hub2xvZ3l8ZW58MHx8fHwxNjE3NzA1Mzcx&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHRlY2hub2xvZ3l8ZW58MHx8fHwxNjE3NzA1Mzcx&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000"
+                alt="Techo fixes are not sufficient, but they are necessary" loading="lazy">
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">Techo fixes are not sufficient, but they are necessary</h2>
+            <div class="feed-excerpt">Techo fixes are not sufficient, but they are necessary Bill Gates, How To Avoid A Climate Disaster I love this.</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2021-02-26">
+                Feb 26, 2021
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    1 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/tumblr/techo-fixes-are-not-sufficient-but-they-are/" aria-label="Techo fixes are not sufficient, but they are necessary"></a>
+</article>                        <article class="feed post" data-month="October 2016">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Oct
+        </div>
+        <div class="feed-calendar-day">
+            04
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDF8fGpvYnN8ZW58MHx8fHwxNjE3NzA1NjA0&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 400w,
+https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDF8fGpvYnN8ZW58MHx8fHwxNjE3NzA1NjA0&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 750w,
+https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDF8fGpvYnN8ZW58MHx8fHwxNjE3NzA1NjA0&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 960w,
+https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDF8fGpvYnN8ZW58MHx8fHwxNjE3NzA1NjA0&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDF8fGpvYnN8ZW58MHx8fHwxNjE3NzA1NjA0&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000"
+                alt="[HIRING] Javascript, full stack (HapiJS &amp; ReactJS) - Remote position *..." loading="lazy">
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">[HIRING] Javascript, full stack (HapiJS &amp; ReactJS) - Remote position *...</h2>
+            <div class="feed-excerpt">[HIRING] Javascript, full stack (HapiJS & ReactJS) - Remote position • /r/remotejsBEN is hiring again! Javascript full stack, remote position.</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2016-10-04">
+                Oct 4, 2016
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/tumblr/hiring-javascript-full-stack-hapijs-reactjs/" aria-label="[HIRING] Javascript, full stack (HapiJS &amp; ReactJS) - Remote position *..."></a>
+</article>                </div>
+            </div>
+        </section>
+                </main>
+</div>
+
+
+        </div>
+
+        <footer class="site-footer container">
+    <div class="footer-inner">
+        <div class="footer-left">
+            <div class="copyright">
+                acmConsulting © 2021
+            </div>
+        </div>
+
+        <nav class="footer-nav">
+                    <a class="menu-item menu-item-data-privacy" href="http://localhost:2368/privacy/">Data &amp; Privacy</a>
+        <span class="sep">•</span>
+        <a class="menu-item menu-item-contact" href="http://localhost:2368/contact/">Contact</a>
+        <span class="sep">•</span>
+
+            <a class="menu-item badge" href="https://ghost.org/" target="_blank" rel="noopener noreferrer">Published with Ghost</a>
+        </nav>
+
+        <div class="footer-right">
+            <div class="social">
+    <a class="social-item social-item-linkedin"
+        href="https://www.linkedin.com/in/alexmcfadyen/" target="_blank"
+        rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn icon</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>    </a>
+
+    <a class="social-item social-item-github"
+        href="https://github.com/a-c-m" target="_blank"
+        rel="noopener noreferrer" aria-label="Github">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>    </a>
+
+
+        <a class="social-item social-item-twitter"
+            href="https://twitter.com/a_c_m" target="_blank"
+            rel="noopener noreferrer" aria-label="Twitter">
+            <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>        </a>
+
+    <a class="social-item social-item-rss"
+        href="/rss" target="_blank"
+        rel="noopener noreferrer" aria-label="RSS">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+    </a>
+</div>        </div>
+    </div>
+</footer>        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe.
+        It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides.
+          PhotoSwipe keeps only 3 of them in the DOM to save memory.
+          Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>    </div>
+
+    <script>
+        if (document.body.classList.contains('with-full-cover')) {
+            document.getElementsByClassName('cover')[0].style.height = window.innerHeight + 'px';
+        }
+    </script>
+
+    <script>
+        var feed = document.querySelector('.post-feed');
+        if (feed && !feed.classList.contains('related-feed')) {
+            var wrapper = document.querySelector('.feed-layout');
+            var feedLayout = localStorage.getItem('edition_layout');
+            switch (feedLayout) {
+                case 'compact':
+                    wrapper.classList.remove('expanded');
+                    feed.classList.remove('expanded');
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+
+    <script src="/assets/built/main.min.js?v=cdd71b73d3"></script>
+
+    
+</body>
+
+</html>
