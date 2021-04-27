@@ -19,7 +19,7 @@
     <meta property="og:url" content="http://www.acmconsulting.eu/post/api-testing-in-the-browser/" />
     <meta property="og:image" content="http://www.acmconsulting.eu/content/images/2021/04/cypress-rest-graphql.png" />
     <meta property="article:published_time" content="2021-04-23T12:55:50.000Z" />
-    <meta property="article:modified_time" content="2021-04-23T14:52:50.000Z" />
+    <meta property="article:modified_time" content="2021-04-26T13:06:25.000Z" />
     <meta property="article:tag" content="Software Development" />
     <meta property="article:tag" content="Testing" />
     
@@ -66,7 +66,7 @@
     "headline": "API testing in the browser?",
     "url": "http://www.acmconsulting.eu/post/api-testing-in-the-browser/",
     "datePublished": "2021-04-23T12:55:50.000Z",
-    "dateModified": "2021-04-23T14:52:50.000Z",
+    "dateModified": "2021-04-26T13:06:25.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "http://www.acmconsulting.eu/content/images/2021/04/cypress-rest-graphql.png",
@@ -253,7 +253,7 @@ ga('send', 'pageview');
                 </span>
 
                 <span class="single-meta-item single-meta-length">
-                    3 min read
+                    4 min read
                 </span>
 
                     <span class="single-meta-item single-meta-tag">
@@ -295,7 +295,7 @@ ga('send', 'pageview');
 _.extend(options, overrides)
 
 cy.request(options)
-</code></pre><p>This works great.</p><p><strong>It's a technique you can re-use in other areas</strong>, beyond login, as a way to speed up parts of a test which you are not actually testing. But, sometimes things fail - we are testing after all.</p><p>However, <strong>API requests are 2nd class citizens in cypress</strong>. They happen in the background and in videos/recordings it's hard to tell what happened/why it failed. You will see what failed (the expect), but you won't know why/see the data.</p><h2 id="enter-cypress-rest-graphql">Enter <code>cypress-rest-graphql</code>!</h2><p>Inspired by <a href="https://github.com/bahmutov/cy-api"><code>cy-api</code></a> we built a plugin to make working with REST and GraphQL end points easier and importantly, to display the data!</p><p>The <code>cy-api</code> module was good, but its focus was a little different and looked for tighter <a href="https://glebbahmutov.com/blog/api-testing-with-sever-logs/">API integration / logging</a>. We wanted something simpler, which didn't assume any API level integration. So we built <code>cypress-rest-graphql</code>.</p><p><code>cypress-rest-graphql</code> focuses on providing a few key commands:</p><pre><code class="language-javascript">/**
+</code></pre><p>This works great.</p><p><strong>It's a technique you can re-use in other areas</strong>, beyond login, as a way to speed up parts of a test which you are not actually testing. But, sometimes things fail - we are testing after all.</p><p>Using request like this is detailed well in the official documentation: <a href="https://docs.cypress.io/api/commands/request#Timeouts">https://docs.cypress.io/api/commands/request#Timeouts</a></p><figure class="kg-card kg-image-card"><img src="https://docs.cypress.io/_nuxt/img/testing-request-url-and-its-response-body-headers.765a174.png" class="kg-image" alt loading="lazy"></figure><p>However, <strong>API requests are 2nd class citizens in cypress</strong>. You will see what failed (the expect), as shown above, but if it fails, you won't know why/see the data.</p><p>To see the data, you need to open the console, as shown below - which is fine when working interactively, but when headless, you miss out on all this information.</p><figure class="kg-card kg-image-card"><img src="https://docs.cypress.io/_nuxt/img/console-log-request-response-body-headers-status-url.de54c8a.png" class="kg-image" alt loading="lazy"></figure><h2 id="enter-cypress-rest-graphql">Enter <code>cypress-rest-graphql</code>!</h2><p>Inspired by <a href="https://github.com/bahmutov/cy-api"><code>cy-api</code></a> we built a plugin to make working with REST and GraphQL end points easier and importantly, to display the data even in headless mode!</p><p>The <code>cy-api</code> module was good, but its focus was a little different and looked for tighter <a href="https://glebbahmutov.com/blog/api-testing-with-sever-logs/">API integration / logging</a>. We wanted something simpler, which didn't assume any API level integration. So we built <code>cypress-rest-graphql</code>.</p><p><code>cypress-rest-graphql</code> focuses on providing a few key commands:</p><pre><code class="language-javascript">/**
  * Helper to perform GraphQL queries on the API
  * Will display the query and response in the pane, for easy review.
  * Automatically uses cy.env('accessToken') for auth
@@ -334,7 +334,7 @@ cy.rest()
  * @param  {Number} maxTries=5 - Maximum number of retries before failing totally.
  */
 cy.restPolling()
-</code></pre><p>When these commands are called, as well as performing the request, <strong>the output is rendered to the UI</strong>, allowing you to see what may have caused an error/issue. Because it's rendered into the DOM, the time travel aspects also work really well</p><figure class="kg-card kg-image-card"><img src="https://raw.githubusercontent.com/BrandedEntertainmentNetwork/cypress-rest-graphql/main/docs/assets/cypress-rest-graphql-screenshot.png" class="kg-image" alt loading="lazy"></figure><p>Please check it out, me know what you think, PRs are encouraged.</p><p>I hope you find it useful.</p>
+</code></pre><p>When these commands are called, as well as performing the request, <strong>the output is rendered to the UI</strong>, allowing you to see what may have caused an error/issue. Because it's rendered into the DOM, the time travel aspects also work really well</p><figure class="kg-card kg-image-card kg-width-wide"><img src="https://raw.githubusercontent.com/BrandedEntertainmentNetwork/cypress-rest-graphql/main/docs/assets/cypress-rest-graphql-screenshot.png" class="kg-image" alt loading="lazy"></figure><p>Please check it out, me know what you think, PRs are encouraged.</p><p>I hope you find it useful.</p>
     </div>
 
         <footer class="single-footer container small">
