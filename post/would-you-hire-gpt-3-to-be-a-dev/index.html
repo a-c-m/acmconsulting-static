@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Would you hire GPT-3 instead of a developer?</title>
+    <link rel="stylesheet" href="/assets/built/screen.css?v=48f9092c87">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta name="description" content="OpenAI&#x27;s ability to generate code can probably pass your early developer screening questions - should you hire it?" />
+    <link rel="canonical" href="https://www.acmconsulting.eu/post/would-you-hire-gpt-3-to-be-a-dev/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="acmConsulting" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Would you hire GPT-3 instead of a developer?" />
+    <meta property="og:description" content="OpenAI&#x27;s ability to generate code can probably pass your early developer screening questions - should you hire it?" />
+    <meta property="og:url" content="https://www.acmconsulting.eu/post/would-you-hire-gpt-3-to-be-a-dev/" />
+    <meta property="og:image" content="https://www.acmconsulting.eu/content/images/2022/07/an-ai-doing-a-coding-exam.jpg" />
+    <meta property="article:published_time" content="2022-07-06T08:49:00.000Z" />
+    <meta property="article:modified_time" content="2022-07-06T09:03:40.000Z" />
+    <meta property="article:tag" content="Interesting" />
+    <meta property="article:tag" content="Jobs" />
+    <meta property="article:tag" content="Managment" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Would you hire GPT-3 instead of a developer?" />
+    <meta name="twitter:description" content="OpenAI&#x27;s ability to generate code can probably pass your early developer screening questions - should you hire it?" />
+    <meta name="twitter:url" content="https://www.acmconsulting.eu/post/would-you-hire-gpt-3-to-be-a-dev/" />
+    <meta name="twitter:image" content="https://www.acmconsulting.eu/content/images/2022/07/an-ai-doing-a-coding-exam.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Alex McFadyen" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Interesting, Jobs, Managment" />
+    <meta name="twitter:site" content="@a_c_m" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "acmConsulting",
+        "url": "https://www.acmconsulting.eu/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.acmconsulting.eu/favicon.ico",
+            "width": 48,
+            "height": 48
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Alex McFadyen",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://www.acmconsulting.eu/content/images/2021/03/1558123564131.jpg",
+            "width": 500,
+            "height": 500
+        },
+        "url": "https://www.acmconsulting.eu/author/a_c_m/",
+        "sameAs": []
+    },
+    "headline": "Would you hire GPT-3 instead of a developer?",
+    "url": "https://www.acmconsulting.eu/post/would-you-hire-gpt-3-to-be-a-dev/",
+    "datePublished": "2022-07-06T08:49:00.000Z",
+    "dateModified": "2022-07-06T09:03:40.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://www.acmconsulting.eu/content/images/2022/07/an-ai-doing-a-coding-exam.jpg",
+        "width": 512,
+        "height": 512
+    },
+    "keywords": "Interesting, Jobs, Managment",
+    "description": "OpenAI&#x27;s ability to generate code can probably pass your early developer screening questions - should you hire it?",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.acmconsulting.eu/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 4.47" />
+    <link rel="alternate" type="application/rss+xml" title="acmConsulting" href="" />
+    <script defer src="https://unpkg.com/@tryghost/portal@~1.22.0/umd/portal.min.js" data-ghost="https://www.acmconsulting.eu/" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <script defer src="/public/cards.min.js?v=48f9092c87"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=48f9092c87">
+    <!-- Redirect to HTTPS -->
+<script type="text/javascript">
+    var host = "acmconsulting.eu";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+</script> 
+
+<!-- Google Analytics -- but without cookies -->
+<!-- https://helgeklein.com/blog/2020/06/google-analytics-cookieless-tracking-without-gdpr-consent/#other-platforms -->
+<script>
+const cyrb53 = function(str, seed = 0) {
+   let h1 = 0xdeadbeef ^ seed,
+      h2 = 0x41c6ce57 ^ seed;
+   for (let i = 0, ch; i < str.length; i++) {
+      ch = str.charCodeAt(i);
+      h1 = Math.imul(h1 ^ ch, 2654435761);
+      h2 = Math.imul(h2 ^ ch, 1597334677);
+   }
+   h1 = Math.imul(h1 ^ h1 >>> 16, 2246822507) ^ Math.imul(h2 ^ h2 >>> 13, 3266489909);
+   h2 = Math.imul(h2 ^ h2 >>> 16, 2246822507) ^ Math.imul(h1 ^ h1 >>> 13, 3266489909);
+   return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+};
+
+let clientIP = "{$_SERVER['REMOTE_ADDR']}";
+let validityInterval = Math.round (new Date() / 1000 / 3600 / 24 / 4);
+let clientIDSource = clientIP + ";" + window.location.host + ";" + navigator.userAgent + ";" + navigator.language + ";" + validityInterval;
+let clientIDHashed = cyrb53(clientIDSource).toString(16);
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-39022512-1', {
+   'storage': 'none',
+   'clientId': clientIDHashed
+});
+ga('set', 'anonymizeIp', true);
+ga('send', 'pageview');
+</script><style>:root {--ghost-accent-color: #008929;}</style>
+</head>
+
+<body class="post-template tag-interesting tag-jobs tag-managment">
+    <div class="site">
+        <header id="site-header" class="site-header">
+    <div class="header-inner">
+        <div class="header-brand">
+            <a class="logo" href="https://www.acmconsulting.eu">
+                    <span class="logo-text">acmConsulting</span>
+            </a>
+
+            <div class="burger">
+                <div class="burger-bar"></div>
+                <div class="burger-bar"></div>
+            </div>
+        </div>
+
+            <nav class="header-nav">
+                        <a class="menu-item menu-item-home" href="https://www.acmconsulting.eu/">Home</a>
+        <a class="menu-item menu-item-about-me" href="https://www.acmconsulting.eu/author/a_c_m/">About Me</a>
+
+            </nav>
+
+        <div class="header-actions">
+            <div class="social">
+    <a class="social-item social-item-linkedin"
+        href="https://www.linkedin.com/in/alexmcfadyen/" target="_blank"
+        rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn icon</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>    </a>
+
+    <a class="social-item social-item-github"
+        href="https://github.com/a-c-m" target="_blank"
+        rel="noopener noreferrer" aria-label="Github">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>    </a>
+
+
+        <a class="social-item social-item-twitter"
+            href="https://twitter.com/a_c_m" target="_blank"
+            rel="noopener noreferrer" aria-label="Twitter">
+            <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>        </a>
+
+    <a class="social-item social-item-rss"
+        href="/rss" target="_blank"
+        rel="noopener noreferrer" aria-label="RSS">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+    </a>
+</div>
+        </div>
+    </div>
+</header>
+
+        <div class="site-content">
+            
+<div class="content-area">
+    <main class="site-main">
+            <article class="single post tag-interesting tag-jobs tag-managment">
+    <header class="single-header kg-canvas">
+            <div class="single-meta">
+                <span class="single-meta-item single-meta-date">
+                    <time datetime="2022-07-06">
+                        Jul 6, 2022
+                    </time>
+                </span>
+
+                <span class="single-meta-item single-meta-length">
+                    5 min read
+                </span>
+
+                    <span class="single-meta-item single-meta-tag">
+                        <a class="post-tag post-tag-interesting" href="/tag/interesting/">Interesting</a>
+                    </span>
+            </div>
+
+        <h1 class="single-title">Would you hire GPT-3 instead of a developer?</h1>
+
+            <div class="single-excerpt">
+                OpenAI&#x27;s ability to generate code can probably pass your early developer screening questions - should you hire it?
+            </div>
+
+                <div class="single-media kg-width-wide">
+                    <img srcset="/content/images/size/w400/2022/07/an-ai-doing-a-coding-exam.jpg 400w,
+/content/images/size/w750/2022/07/an-ai-doing-a-coding-exam.jpg 750w,
+/content/images/size/w960/2022/07/an-ai-doing-a-coding-exam.jpg 960w,
+/content/images/size/w1140/2022/07/an-ai-doing-a-coding-exam.jpg 1140w" sizes="(min-width: 1023px) 920px, calc(90vw)" src="/content/images/size/w960/2022/07/an-ai-doing-a-coding-exam.jpg" alt="Would you hire GPT-3 instead of a developer?">
+                </div>
+    </header>
+
+    <div class="single-content kg-canvas u-text-format">
+        <p><a href="https://github.com/features/copilot/">CoPilot</a>, <strong>the AI pair programmer</strong> by <a href="https://openai.com/">OpenAI</a> and GitHub/Microsoft, is <a href="https://github.blog/2022-06-21-github-copilot-is-generally-available-to-all-developers/">generally available</a>, I've been very slow in trying it out and so far have recommended our developers <strong>DON'T use it on our internal codebases</strong> due to IP and concerns (see end).</p><p>But, you can play with the same system, to <strong>test it, without giving it access</strong> to your IDE or internal codebases, just by signing up to <a href="https://beta.openai.com/playground">OpenAI's Playground</a> - where you get <strong>$18 of free credits</strong> to ask questions of this huge AI model.</p><p>So, I did. I fed it a few <strong>typical JavaScript interview questions</strong> and was impressed by the results:</p><blockquote>Create a React component which lets you up and down vote, with buttons, and keeps a running total of the number of up and down votes.</blockquote><pre><code class="language-JavaScript">class UpDownVotes extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      upvotes: 0,
+      downvotes: 0
+    }
+  }
+  
+  upVote = () =&gt; {
+    this.setState({
+      upvotes: this.state.upvotes + 1
+    })
+  }
+  
+  downVote = () =&gt; {
+    this.setState({
+      downvotes: this.state.downvotes + 1
+    })
+  }
+  
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;button onClick={this.upVote}&gt;Up Vote&lt;/button&gt;
+        &lt;button onClick={this.downVote}&gt;Down Vote&lt;/button&gt;
+        &lt;p&gt;Upvotes: {this.state.upvotes}&lt;/p&gt;
+        &lt;p&gt;Downvotes: {this.state.downvotes}&lt;/p&gt;
+      &lt;/div&gt;
+    )
+  }
+}</code></pre><p>Not bad! <strong>Let's try something a little harder:</strong></p><blockquote>Create a javascript function SimplePassword(str) take the str parameter being passed and determine if it passes as a valid password that follows the list of constraints:<br>1. It must have a capital letter.<br>2. It must contain at least one number.<br>3. It must contain a punctuation mark or mathematical symbol.<br>4. It cannot have the word "password" in the string.<br>5. It must be longer than 7 characters and shorter than 31 characters.<br>If all the above constraints are met within the string, the your program should return the string true, otherwise your program should return the string false. For example: if str is "apple!M7" then your program should return "true".</blockquote><pre><code class="language-JavaScript">function SimplePassword(str) { 
+  if(str.length&gt;7 &amp;&amp; str.length&lt;31){
+    if(/^[0-9a-zA-Z!@#$%^&amp;*()_+\-=\[\]{};':"\\|,.&lt;&gt;\/?]*$/.test(str)){
+      var pass = str.split("");
+      var hasNum = false;
+      var hasLetter = false;
+      var hasPunc = false;
+      for(var i=0;i&lt;pass.length;i++){
+        if(/[0-9]/.test(pass[i]))
+          hasNum=true;
+        else if(/[a-zA-Z]/.test(pass[i]))
+          hasLetter=true;
+        else{
+          hasPunc=true;
+        }
+      }
+      if(hasNum&amp;&amp;hasLetter&amp;&amp;hasPunc){
+        if(str.toLowerCase().search("password")==-1)
+          return true;
+        else
+          return false;
+      }
+    }
+  }
+  return false;        
+}</code></pre><p>Yep, ok. <strong>What about a theory question?</strong></p><blockquote>What do you understand by Closures in JavaScript?</blockquote><pre><code class="language-MarkDown">A closure is a function that makes use of variables defined 
+in outer functions that have previously returned. 
+In JavaScript, closures are created every time a function 
+is created that uses variables from outside its scope.</code></pre><p>Or a question about <strong>what NPM modules to use</strong>?</p><blockquote>Which npm modules would you use to manage a database schema?</blockquote><pre><code class="language-Markdown">There are many npm modules that can be used to manage 
+a database schema, but two of the most popular are 
+sequelize and knex.</code></pre><p>Ok, let's dig into that:</p><blockquote>What are the pros and cons of sequelize vs knex?</blockquote><pre><code class="language-Markdown">There is no definitive answer to this question as it depends
+on personal preferences and opinions. Some people may prefer
+sequelize because it offers more features and is better suited
+for larger projects, while others may prefer knex because it
+is simpler and easier to use.</code></pre><p><strong>It's not just code,</strong> it can answer questions about git</p><blockquote>What does the following command do?<br>git diff-tree –r {commit hash}</blockquote><pre><code class="language-Markdown">The command git diff-tree –r {commit hash} displays the
+differences between the commit with the given hash and
+its parents.</code></pre><p>or <strong>deployment strategies</strong></p><blockquote>What deployment strategies do you know and have used before? How can a company deploy with no downtime?</blockquote><pre><code class="language-Markdown">There are a few deployment strategies:
+
+1. Blue/Green Deployment: With this strategy, you have two identical
+production environments. You deploy your updates to the environment 
+that is not currently serving traffic (the "green" environment), and 
+then once the updates are deployed and tested, you switch traffic over
+to the green environment. This ensures that there is no downtime, as 
+users will always be able to access the site/application.
+
+2. Canary Deployment: This is similar to blue/green deployment, but 
+instead of having two identical production environments, you have a 
+production environment and a staging environment. You deploy your 
+updates to the staging environment first, and then if everything looks 
+good, you deploy the updates to production. This ensures that there is 
+less risk, as you can test the updates in a non-production environment 
+first.
+
+3. A/B Testing: With this strategy, you deploy your updates to a small 
+subset of users first, and then if everything looks good, you deploy the 
+updates to all users. This helps to reduce the risk of deploying to all 
+users at once, as you can test the updates with a smaller group first.
+
+4. Rolling Deployment: This strategy involves slowly rolling out the 
+updates to all users, rather than deploying all at once. This can help 
+to reduce the risk of deploying to all users at once, as you can make 
+sure that the updates are working as expected before deploying to all 
+users.</code></pre><p><strong>It wasn't perfect</strong>, it missed parts of questions, it got confused when I used longer and more intricate problems - but over all, it would not fare badly against most entry level or even mid level candidates!</p><p>BUT. As mentioned, <strong>it's not all magic and rainbows</strong> - there are some serious questions about the ownership and licencing of the code it generates; like this one</p><figure class="kg-card kg-embed-card"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">If <a href="https://twitter.com/github?ref_src=twsrc%5Etfw">@GitHub</a> (Microsoft) truly believes copilot isn&#39;t infringing on anyone&#39;s work, I want to offer them a chance to prove it: I&#39;ll donate $50k to a charity of their choice (or <a href="https://twitter.com/EFF?ref_src=twsrc%5Etfw">@EFF</a> if we can&#39;t agree) if they release a Copilot version trained solely on Windows kernel source. 1/ <a href="https://t.co/WMWD6FTcR2">https://t.co/WMWD6FTcR2</a></p>&mdash; Jake Williams (@MalwareJake) <a href="https://twitter.com/MalwareJake/status/1411351168643706886?ref_src=twsrc%5Etfw">July 3, 2021</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</figure><p>and this one</p><figure class="kg-card kg-embed-card"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">I don&#39;t want to say anything but that&#39;s not the right license Mr Copilot. <a href="https://t.co/hs8JRVQ7xJ">pic.twitter.com/hs8JRVQ7xJ</a></p>&mdash; Armin Ronacher (@mitsuhiko) <a href="https://twitter.com/mitsuhiko/status/1410886329924194309?ref_src=twsrc%5Etfw">July 2, 2021</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</figure><p>and this one</p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://www.theverge.com/2021/7/7/22561180/github-copilot-legal-copyright-fair-use-public-code"><div class="kg-bookmark-content"><div class="kg-bookmark-title">Can AI learn from any public code online?</div><div class="kg-bookmark-description">A question of fair use</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/7395351/android-chrome-192x192.0.png" alt=""><span class="kg-bookmark-author">The Verge</span><span class="kg-bookmark-publisher">Dave Gershgorn</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://cdn.vox-cdn.com/thumbor/T7TtNvHFYDIqh93AXqFVtgCoC4w&#x3D;/0x278:3888x2314/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22702238/1231387819.jpg" alt=""></div></a></figure><p>and this one</p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://github.com/github-community/community/discussions/7163#discussioncomment-2870728"><div class="kg-bookmark-content"><div class="kg-bookmark-title">Is Github Copilot safe privacy wise? · Discussion #7163 · github-community/community</div><div class="kg-bookmark-description">Hi I&amp;#39;m sure this is a stupid question and someone else probably asked it. But is Github Copilot safe to be used on private projects/repos. I&amp;#39;m sure you collect prediction analytics but that...</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://github.com/fluidicon.png" alt=""><span class="kg-bookmark-author">GitHub</span><span class="kg-bookmark-publisher">github-community</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://opengraph.githubassets.com/e803a8f0781ca8b55776a65cfabd26d7b37e708568878d6f9df9eb8f8ee42b5e/orgs/github-community/discussions/7163" alt=""></div></a></figure><p>But...</p><blockquote>Would you hire GPT-3 instead of a developer?</blockquote><pre><code>GPT-3 is not a developer, so it cannot be hired to do development work.
+</code></pre><p>...but for how long?</p><p>And<strong> that crazy image at the top</strong>, that's another OpenAI (<a href="https://openai.com/blog/dall-e/">DALL-E</a>) model, which instead of generating code/text, creates images. The image was inspired by the prompt <strong>"<a href="https://creator.nightcafe.studio/creation/vjY24BRzALK7iYfH7ywn">An AI doing a coding exam</a>"</strong> and created using the <a href="https://nightcafe.studio/">NightCafe</a> service. Its using DALL-E v1, and there is already a v2 out. </p>
+    </div>
+
+        <footer class="single-footer container small">
+            <div class="single-footer-left">
+                    <div class="navigation navigation-previous">
+                        <a class="navigation-link" href="/post/feels-good-to-be-back/" aria-label="Previous post">
+                            <span class="navigation-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M26.667 14.667v2.667h-16L18 24.667l-1.893 1.893L5.547 16l10.56-10.56L18 7.333l-7.333 7.333h16z"></path>
+</svg></span>
+                        </a>
+                    </div>
+            </div>
+
+            <div class="single-footer-middle">
+                <div class="single-footer-top">
+                    <h3 class="single-footer-title">Published by:</h3>
+                    <div class="author-list">
+                            <a href="/author/a_c_m/" title="Alex McFadyen">
+                                <div class="author-image-placeholder u-placeholder square">
+                                    <img class="author-image u-object-fit" src="/content/images/size/w150/2021/03/1558123564131.jpg" alt="Alex McFadyen" loading="lazy">
+                                </div>
+                                <div class="author-details">
+                                    <div class="author-name">Alex McFadyen</div>
+                                    <div class="author-meta">London, UK</div>
+                                </div>
+                            </a>
+                    </div>
+                </div>
+
+                <div class="single-footer-bottom">
+                    <div class="share">
+    <a class="share-link share-link-twitter"
+        href="https://twitter.com/intent/tweet?url=https://www.acmconsulting.eu/post/would-you-hire-gpt-3-to-be-a-dev/&text=Would%20you%20hire%20GPT-3%20instead%20of%20a%20developer%3F"
+        target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>        Tweet
+    </a>
+    <a class="share-link share-link-linkedin"
+        href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.acmconsulting.eu/post/would-you-hire-gpt-3-to-be-a-dev/&title=Would%20you%20hire%20GPT-3%20instead%20of%20a%20developer%3F"
+        target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn icon</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>        Share
+    </a>
+    <a class="share-link share-link-ycombinator"
+        href="https://news.ycombinator.com/submitlink?u=https://www.acmconsulting.eu/post/would-you-hire-gpt-3-to-be-a-dev/&t=Would%20you%20hire%20GPT-3%20instead%20of%20a%20developer%3F"
+        target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Y Combinator icon</title><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>        Share
+    </a>
+    <a class="share-link share-link-reddit"
+        href="http://www.reddit.com/submit?url=https://www.acmconsulting.eu/post/would-you-hire-gpt-3-to-be-a-dev/&title=Would%20you%20hire%20GPT-3%20instead%20of%20a%20developer%3F"
+        target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Reddit icon</title><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>        Share
+    </a>
+</div>                </div>
+            </div>
+
+            <div class="single-footer-right">
+            </div>
+        </footer>
+</article>                    <section class="related-wrapper">
+            <div class="container small">
+                <h3 class="related-title">You might also like...</h3>
+                <div class="post-feed related-feed">
+                        <article class="feed post" data-month="June 2022">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Jun
+        </div>
+        <div class="feed-calendar-day">
+            23
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="/content/images/size/w400/2022/06/presenting-1-.jpg 400w,
+/content/images/size/w750/2022/06/presenting-1-.jpg 750w,
+/content/images/size/w960/2022/06/presenting-1-.jpg 960w,
+/content/images/size/w1140/2022/06/presenting-1-.jpg 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="/content/images/size/w750/2022/06/presenting-1-.jpg"
+                alt="Feels good to be back" loading="lazy">
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">Feels good to be back</h2>
+            <div class="feed-excerpt">It wasn't my first conference and presentation since the start of the pandemic, but this was the first that felt like they used to. A buzz, people, ideas, technology - it just felt right.</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2022-06-23">
+                Jun 23, 2022
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    2 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/post/feels-good-to-be-back/" aria-label="Feels good to be back"></a>
+</article>                        <article class="feed post" data-month="June 2022">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Jun
+        </div>
+        <div class="feed-calendar-day">
+            13
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDV8fGRvZyUyMGZvb2R8ZW58MHx8fHwxNjU1MTQ3NzQz&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 400w,
+https://images.unsplash.com/photo-1589924691995-400dc9ecc119?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDV8fGRvZyUyMGZvb2R8ZW58MHx8fHwxNjU1MTQ3NzQz&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 750w,
+https://images.unsplash.com/photo-1589924691995-400dc9ecc119?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDV8fGRvZyUyMGZvb2R8ZW58MHx8fHwxNjU1MTQ3NzQz&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 960w,
+https://images.unsplash.com/photo-1589924691995-400dc9ecc119?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDV8fGRvZyUyMGZvb2R8ZW58MHx8fHwxNjU1MTQ3NzQz&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDV8fGRvZyUyMGZvb2R8ZW58MHx8fHwxNjU1MTQ3NzQz&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000"
+                alt="Dog food tastes great!" loading="lazy">
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">Dog food tastes great!</h2>
+            <div class="feed-excerpt">Eating your vegetables is good, dog food is even better!</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2022-06-13">
+                Jun 13, 2022
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    2 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/post/dogfood-tastes-great/" aria-label="Dog food tastes great!"></a>
+</article>                        <article class="feed post" data-month="June 2022">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Jun
+        </div>
+        <div class="feed-calendar-day">
+            08
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="https://images.unsplash.com/photo-1607000975509-de2f74eb8d36?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDcyfHx0cnVzdHxlbnwwfHx8fDE2NTQ2Nzc4OTE&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 400w,
+https://images.unsplash.com/photo-1607000975509-de2f74eb8d36?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDcyfHx0cnVzdHxlbnwwfHx8fDE2NTQ2Nzc4OTE&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 750w,
+https://images.unsplash.com/photo-1607000975509-de2f74eb8d36?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDcyfHx0cnVzdHxlbnwwfHx8fDE2NTQ2Nzc4OTE&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 960w,
+https://images.unsplash.com/photo-1607000975509-de2f74eb8d36?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDcyfHx0cnVzdHxlbnwwfHx8fDE2NTQ2Nzc4OTE&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="https://images.unsplash.com/photo-1607000975509-de2f74eb8d36?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDcyfHx0cnVzdHxlbnwwfHx8fDE2NTQ2Nzc4OTE&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000"
+                alt="Building trust" loading="lazy">
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">Building trust</h2>
+            <div class="feed-excerpt">Team/trust building exercises seem to be the butt of jokes, but when done right, it's some of the best and highest leveraged time you can spend.</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2022-06-08">
+                Jun 8, 2022
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    1 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/post/building-trust/" aria-label="Building trust"></a>
+</article>                        <article class="feed post" data-month="February 2022">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Feb
+        </div>
+        <div class="feed-calendar-day">
+            25
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="https://images.unsplash.com/photo-1522435229388-6f7a422cd95b?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDh8fHRoaW5raW5nfGVufDB8fHx8MTY0NTc4NzA3Mg&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 400w,
+https://images.unsplash.com/photo-1522435229388-6f7a422cd95b?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDh8fHRoaW5raW5nfGVufDB8fHx8MTY0NTc4NzA3Mg&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 750w,
+https://images.unsplash.com/photo-1522435229388-6f7a422cd95b?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDh8fHRoaW5raW5nfGVufDB8fHx8MTY0NTc4NzA3Mg&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 960w,
+https://images.unsplash.com/photo-1522435229388-6f7a422cd95b?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDh8fHRoaW5raW5nfGVufDB8fHx8MTY0NTc4NzA3Mg&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="https://images.unsplash.com/photo-1522435229388-6f7a422cd95b?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDh8fHRoaW5raW5nfGVufDB8fHx8MTY0NTc4NzA3Mg&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000"
+                alt="Thinking about thinking (again)" loading="lazy">
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">Thinking about thinking (again)</h2>
+            <div class="feed-excerpt">What are your goto mental models about mental models?</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2022-02-25">
+                Feb 25, 2022
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    2 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/post/thinking-about-thinking-again/" aria-label="Thinking about thinking (again)"></a>
+</article>                        <article class="feed post" data-month="October 2021">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Oct
+        </div>
+        <div class="feed-calendar-day">
+            08
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="/content/images/size/w400/2021/10/51DXISAPtcL._AC_SL1080_.jpg 400w,
+/content/images/size/w750/2021/10/51DXISAPtcL._AC_SL1080_.jpg 750w,
+/content/images/size/w960/2021/10/51DXISAPtcL._AC_SL1080_.jpg 960w,
+/content/images/size/w1140/2021/10/51DXISAPtcL._AC_SL1080_.jpg 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="/content/images/size/w750/2021/10/51DXISAPtcL._AC_SL1080_.jpg"
+                alt="The best router you&#x27;ve never heard of" loading="lazy">
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">The best router you&#x27;ve never heard of</h2>
+            <div class="feed-excerpt">GL.iNet? Anyone? No, me neither. Until I was looking for a small footprint wifi router/extender, and I came across their little yellow box.</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2021-10-08">
+                Oct 8, 2021
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    2 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/post/the-best-router-youve-never-heard-of/" aria-label="The best router you&#x27;ve never heard of"></a>
+</article>                </div>
+            </div>
+        </section>
+                </main>
+</div>
+
+
+        </div>
+
+        <footer class="site-footer container">
+    <div class="footer-inner">
+        <div class="footer-left">
+            <div class="copyright">
+                acmConsulting © 2022
+            </div>
+        </div>
+
+        <nav class="footer-nav">
+                    <a class="menu-item menu-item-data-privacy" href="https://www.acmconsulting.eu/privacy/">Data &amp; Privacy</a>
+        <span class="sep">•</span>
+        <a class="menu-item menu-item-contact" href="https://www.acmconsulting.eu/contact/">Contact</a>
+        <span class="sep">•</span>
+
+            <a class="menu-item badge" href="https://ghost.org/" target="_blank" rel="noopener noreferrer">Published with Ghost</a>
+        </nav>
+
+        <div class="footer-right">
+            <div class="social">
+    <a class="social-item social-item-linkedin"
+        href="https://www.linkedin.com/in/alexmcfadyen/" target="_blank"
+        rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn icon</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>    </a>
+
+    <a class="social-item social-item-github"
+        href="https://github.com/a-c-m" target="_blank"
+        rel="noopener noreferrer" aria-label="Github">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>    </a>
+
+
+        <a class="social-item social-item-twitter"
+            href="https://twitter.com/a_c_m" target="_blank"
+            rel="noopener noreferrer" aria-label="Twitter">
+            <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>        </a>
+
+    <a class="social-item social-item-rss"
+        href="/rss" target="_blank"
+        rel="noopener noreferrer" aria-label="RSS">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+    </a>
+</div>        </div>
+    </div>
+</footer>        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe.
+        It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides.
+          PhotoSwipe keeps only 3 of them in the DOM to save memory.
+          Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>    </div>
+
+    <script>
+        if (document.body.classList.contains('with-full-cover')) {
+            document.getElementsByClassName('cover')[0].style.height = window.innerHeight + 'px';
+        }
+    </script>
+
+    <script>
+        var feed = document.querySelector('.post-feed');
+        if (feed && !feed.classList.contains('related-feed')) {
+            var wrapper = document.querySelector('.feed-layout');
+            var feedLayout = localStorage.getItem('edition_layout');
+            switch (feedLayout) {
+                case 'compact':
+                    wrapper.classList.remove('expanded');
+                    feed.classList.remove('expanded');
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+
+    <script src="/assets/built/main.min.js?v=48f9092c87"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
+</body>
+
+</html>
