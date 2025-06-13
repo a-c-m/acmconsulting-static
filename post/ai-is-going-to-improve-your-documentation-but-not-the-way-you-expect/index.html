@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI is going to improve your documentation... but not the way you expect</title>
+    <link rel="stylesheet" href="/assets/built/screen.css?v=c7c90b3252">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta name="description" content="&quot;AI can read the code&quot; feels like the new &quot;code documents itself&quot;. It&#x27;s wrong. Very very wrong." />
+    <link rel="canonical" href="https://www.acmconsulting.eu/post/ai-is-going-to-improve-your-documentation-but-not-the-way-you-expect/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="acmConsulting" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="AI is going to improve your documentation... but not the way you expect" />
+    <meta property="og:description" content="&quot;AI can read the code&quot; feels like the new &quot;code documents itself&quot;. It&#x27;s wrong. Very very wrong." />
+    <meta property="og:url" content="https://www.acmconsulting.eu/post/ai-is-going-to-improve-your-documentation-but-not-the-way-you-expect/" />
+    <meta property="og:image" content="https://www.acmconsulting.eu/content/images/2025/06/ChatGPT-Image-Jun-13--2025--10_30_36-AM.png" />
+    <meta property="article:published_time" content="2025-06-13T09:38:44.000Z" />
+    <meta property="article:modified_time" content="2025-06-13T09:38:44.000Z" />
+    <meta property="article:tag" content="Software Development" />
+    <meta property="article:tag" content="Productivity" />
+    <meta property="article:tag" content="Interesting" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI is going to improve your documentation... but not the way you expect" />
+    <meta name="twitter:description" content="&quot;AI can read the code&quot; feels like the new &quot;code documents itself&quot;. It&#x27;s wrong. Very very wrong." />
+    <meta name="twitter:url" content="https://www.acmconsulting.eu/post/ai-is-going-to-improve-your-documentation-but-not-the-way-you-expect/" />
+    <meta name="twitter:image" content="https://www.acmconsulting.eu/content/images/2025/06/ChatGPT-Image-Jun-13--2025--10_30_36-AM.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Alex McFadyen" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Software Development, Productivity, Interesting" />
+    <meta name="twitter:site" content="@a_c_m" />
+    <meta property="og:image:width" content="1536" />
+    <meta property="og:image:height" content="1024" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "acmConsulting",
+        "url": "https://www.acmconsulting.eu/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.acmconsulting.eu/favicon.ico",
+            "width": 48,
+            "height": 48
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Alex McFadyen",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://www.acmconsulting.eu/content/images/2021/03/1558123564131.jpg",
+            "width": 500,
+            "height": 500
+        },
+        "url": "https://www.acmconsulting.eu/author/a_c_m/",
+        "sameAs": []
+    },
+    "headline": "AI is going to improve your documentation... but not the way you expect",
+    "url": "https://www.acmconsulting.eu/post/ai-is-going-to-improve-your-documentation-but-not-the-way-you-expect/",
+    "datePublished": "2025-06-13T09:38:44.000Z",
+    "dateModified": "2025-06-13T09:38:44.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://www.acmconsulting.eu/content/images/2025/06/ChatGPT-Image-Jun-13--2025--10_30_36-AM.png",
+        "width": 1536,
+        "height": 1024
+    },
+    "keywords": "Software Development, Productivity, Interesting",
+    "description": "&quot;AI can read the code&quot; feels like the new &quot;code documents itself&quot;. It&#x27;s wrong. Very very wrong.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.acmconsulting.eu/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 4.48" />
+    <link rel="alternate" type="application/rss+xml" title="acmConsulting" href="" />
+    <script defer src="https://unpkg.com/@tryghost/portal@~1.22.0/umd/portal.min.js" data-ghost="https://www.acmconsulting.eu/" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <script defer src="/public/cards.min.js?v=c7c90b3252"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=c7c90b3252">
+    <!-- Redirect to HTTPS -->
+<script type="text/javascript">
+    var host = "acmconsulting.eu";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+</script> 
+
+<!-- Google Analytics -- but without cookies -->
+<!-- https://helgeklein.com/blog/2020/06/google-analytics-cookieless-tracking-without-gdpr-consent/#other-platforms -->
+<script>
+const cyrb53 = function(str, seed = 0) {
+   let h1 = 0xdeadbeef ^ seed,
+      h2 = 0x41c6ce57 ^ seed;
+   for (let i = 0, ch; i < str.length; i++) {
+      ch = str.charCodeAt(i);
+      h1 = Math.imul(h1 ^ ch, 2654435761);
+      h2 = Math.imul(h2 ^ ch, 1597334677);
+   }
+   h1 = Math.imul(h1 ^ h1 >>> 16, 2246822507) ^ Math.imul(h2 ^ h2 >>> 13, 3266489909);
+   h2 = Math.imul(h2 ^ h2 >>> 16, 2246822507) ^ Math.imul(h1 ^ h1 >>> 13, 3266489909);
+   return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+};
+
+let clientIP = "{$_SERVER['REMOTE_ADDR']}";
+let validityInterval = Math.round (new Date() / 1000 / 3600 / 24 / 4);
+let clientIDSource = clientIP + ";" + window.location.host + ";" + navigator.userAgent + ";" + navigator.language + ";" + validityInterval;
+let clientIDHashed = cyrb53(clientIDSource).toString(16);
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-39022512-1', {
+   'storage': 'none',
+   'clientId': clientIDHashed
+});
+ga('set', 'anonymizeIp', true);
+ga('send', 'pageview');
+</script><style>:root {--ghost-accent-color: #008929;}</style>
+</head>
+
+<body class="post-template tag-software-development tag-productivity tag-interesting">
+    <div class="site">
+        <header id="site-header" class="site-header">
+    <div class="header-inner">
+        <div class="header-brand">
+            <a class="logo" href="https://www.acmconsulting.eu">
+                    <span class="logo-text">acmConsulting</span>
+            </a>
+
+            <div class="burger">
+                <div class="burger-bar"></div>
+                <div class="burger-bar"></div>
+            </div>
+        </div>
+
+            <nav class="header-nav">
+                        <a class="menu-item menu-item-home" href="https://www.acmconsulting.eu/">Home</a>
+        <a class="menu-item menu-item-about-me" href="https://www.acmconsulting.eu/author/a_c_m/">About Me</a>
+
+            </nav>
+
+        <div class="header-actions">
+            <div class="social">
+    <a class="social-item social-item-linkedin"
+        href="https://www.linkedin.com/in/alexmcfadyen/" target="_blank"
+        rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn icon</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>    </a>
+
+    <a class="social-item social-item-github"
+        href="https://github.com/a-c-m" target="_blank"
+        rel="noopener noreferrer" aria-label="Github">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>    </a>
+
+
+        <a class="social-item social-item-twitter"
+            href="https://twitter.com/a_c_m" target="_blank"
+            rel="noopener noreferrer" aria-label="Twitter">
+            <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>        </a>
+
+    <a class="social-item social-item-rss"
+        href="/rss" target="_blank"
+        rel="noopener noreferrer" aria-label="RSS">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+    </a>
+</div>
+        </div>
+    </div>
+</header>
+
+        <div class="site-content">
+            
+<div class="content-area">
+    <main class="site-main">
+            <article class="single post tag-software-development tag-productivity tag-interesting featured">
+    <header class="single-header kg-canvas">
+            <div class="single-meta">
+                <span class="single-meta-item single-meta-date">
+                    <time datetime="2025-06-13">
+                        Jun 13, 2025
+                    </time>
+                </span>
+
+                <span class="single-meta-item single-meta-length">
+                    5 min read
+                </span>
+
+                    <span class="single-meta-item single-meta-tag">
+                        <a class="post-tag post-tag-software-development" href="/tag/software-development/">Software Development</a>
+                    </span>
+            </div>
+
+        <h1 class="single-title">AI is going to improve your documentation... but not the way you expect</h1>
+
+            <div class="single-excerpt">
+                &quot;AI can read the code&quot; feels like the new &quot;code documents itself&quot;. It&#x27;s wrong. Very very wrong.
+            </div>
+
+                <div class="single-media kg-width-wide">
+                    <img srcset="/content/images/size/w400/2025/06/ChatGPT-Image-Jun-13--2025--10_30_36-AM.png 400w,
+/content/images/size/w750/2025/06/ChatGPT-Image-Jun-13--2025--10_30_36-AM.png 750w,
+/content/images/size/w960/2025/06/ChatGPT-Image-Jun-13--2025--10_30_36-AM.png 960w,
+/content/images/size/w1140/2025/06/ChatGPT-Image-Jun-13--2025--10_30_36-AM.png 1140w" sizes="(min-width: 1023px) 920px, calc(90vw)" src="/content/images/size/w960/2025/06/ChatGPT-Image-Jun-13--2025--10_30_36-AM.png" alt="AI is going to improve your documentation... but not the way you expect">
+                </div>
+    </header>
+
+    <div class="single-content kg-canvas u-text-format">
+        <p><strong>TL;DR</strong>: Forget AI replacing documentation. I think it's making it more critical than ever. Every AI interaction is like onboarding a new developer who knows nothing about your codebase. The better your docs, the better your AI performs. We're entering an era where documentation quality directly impacts development velocity, and your senior developers' time might be better spent writing context for AI, not code.</p><h2 id="the-brutal-reality-of-ai-assisted-development">The brutal reality of AI-assisted development</h2><p>No, documentation has not become obsolete because "AI can just read the code." In fact, the opposite is true. Documentation has become the most high-leverage activity in your development workflow, and here's why: every time you prompt an AI agent, you're essentially onboarding a new junior developer who has <strong>zero context</strong> about your codebase, your architectural decisions, or your team's conventions.</p><p>Think about it. You pay for every token the AI processes. You wait for every context window to be filled. And most critically, the AI starts from scratch every single time. That brilliant refactoring it helped you with yesterday? Gone. The deep understanding of your module boundaries? Vanished. The nuanced grasp of why you chose that particular design pattern? Non-existent.<br><br>It's also better for the environment. AI inference is not cheap, if you can reduce the overhead of every request you make, its not only good for your token budget, its good for the planet! (I'm not kidding).</p><p>This is where the paradigm shift happens. <strong>Good documentation is no longer just helpful, it's the primary interface between your team's knowledge and your AI tools.</strong></p><h2 id="your-documentation-is-now-code%E2%80%94treat-it-that-way">Your documentation is now code—treat it that way</h2><p>Modern AI-assisted development relies on specific documentation patterns that directly impact AI performance. The emergence of files like <strong><code>.cursorrules</code></strong> and <strong><code>claude.md</code></strong> isn't just another config file trend—these are the instruction manuals that transform a generic AI into your team's specialized assistant.</p><p>Here's what actually works:</p><p><strong>Context files are your new superpower.</strong> A well-crafted <code>claude.md</code> file in your project root should contain:</p><ul><li>Your project's architecture decisions and the <strong>why</strong> behind them</li><li>Code style preferences that go beyond what a linter can catch</li><li>Common patterns and anti-patterns specific to your codebase</li><li>Module boundaries and interaction rules</li><li>Performance considerations and optimization strategies</li><li>It is not your <code>README.md</code> focus on what the AI needs, and keep what the humans need in the <code>README.md</code>, minimize overlap.</li></ul><p><strong>Modular documentation beats monolithic files.</strong> Instead of one massive documentation file, you could structure your AI context like your code:</p><pre><code>CLAUDE.md               # Project wide context
+
+.claude/
+└── commands/
+    ├── pr.md           # How to create a PR
+    ├── issue.md        # Pushing a new issue
+    └── review.md       # How you check/review code
+
+src/
+├── api/
+│   └── claude.md       # API-specific context
+└── database/
+    └── claude.md       # Database context</code></pre><p><strong>Every "why" you document saves hundreds of future tokens or failed prompts.</strong> The AI can read your code and understand <strong>what</strong> it does. It cannot understand <strong>why</strong> you chose a particular approach, <strong>who</strong> the stakeholders are, or <strong>when</strong> certain patterns should be applied. This context is what separates useful AI suggestions from generic boilerplate.</p><p>How is also worth documenting, but <strong>not how the code works, HOW to get work done</strong>. That is the commands folder, descriptions on how your team/project does things and how the AI can use to use the tools your team depends on (more on this in the next section).</p><p>But also remember, document where your approach deviates from best practice/common wisdom, as tokens cost money/time/energy. So <strong>things which "go without saying" do not need to be said</strong>.</p><h2 id="mcp-changes-everything-about-tool-integration">MCP changes everything about tool integration</h2><p>Model Context Protocol (MCP) is huge. I think it should fundamentally change how you think about AI agents interacting with your development environment. </p><p>Before MCP, connecting an AI to your tools meant:</p><ul><li>Custom integrations for each AI provider</li><li>Brittle API wrappers or custom scripts</li><li>Limited access to real development workflows</li><li>Or lots of copy paste from one tool into the AI's chat</li></ul><p>With MCP, your AI can now:</p><ul><li><strong>Create tickets directly in your issue tracker</strong></li><li><strong>Get the latest documentation and best practice (<a href="https://context7.com/">Context7</a> rocks)</strong></li><li><strong>Run your CI/CD pipelines locally and interpret results (or get the results from your remote system)</strong></li><li><strong>Query your production metrics while debugging</strong></li><li><strong>Take screenshots of the local (in progress) UI to compare with a design or expected behavior</strong></li></ul><p>The protocol defines three core primitives that matter for developers:</p><ul><li><strong>Tools</strong>: Functions your AI can execute (like "create_github_issue" or "run_test_suite")</li><li><strong>Resources</strong>: Data streams it can access (like "current_sprint_tickets" or "error_logs")</li><li><strong>Prompts/Commands</strong>: Reusable templates for common or team specific operations</li></ul><p>This means your documentation isn't just telling the AI about your system; it's giving it the ability to actually interact with and modify your system. The implications are profound: your documentation quality now directly impacts what your AI can do, not just what it knows.</p><h2 id="the-multiplication-effect-documentation-roi-in-the-ai-era">The multiplication effect: documentation ROI in the AI era</h2><p>Here's the brutal maths. Let's say you have a team of 10 developers. Pre-AI, you might onboard 1-3 new developers per year (or more if you are growing fast). With AI, you're effectively onboarding a new "developer" <strong>every single time someone opens their AI coding assistant</strong>.</p><p>If each developer uses AI assistance 20 times per day, that's 200 "onboardings" daily. 1,000 per week. 50,000 per year.</p><p>Now multiply that by the cost difference between a well-documented onboarding (AI immediately understands your patterns and conventions) versus a poor one (AI suggests generic solutions that don't fit your architecture). The leverage is staggering.</p><p><strong>Bad documentation used to slow down new hires. Now it slows down every single AI-assisted action across your entire team.</strong></p><p>But here's the thing most teams miss: writing documentation for AI is fundamentally different from writing for humans. Humans can infer context, ask clarifying questions, and learn incrementally. AI needs everything spelled out explicitly, every single time.</p><h2 id="what-actually-works-practical-documentation-strategies-for-ai">What actually works: practical documentation strategies for AI</h2><p>After watching teams struggle and succeed with AI-assisted development, clear patterns emerge:</p><p><strong>1. Document the "why," not the "what"</strong><br>Your AI can read <code>UserService.validateEmail()</code> and understand it validates emails. What it can't understand is why you're using a custom validator instead of a library, why email validation happens at this layer instead of the frontend, or why you allow plus-addressing but not subdomain addressing.</p><p><strong> 2. Make your context explicit and specific </strong><br>As well as the slightly redundant "follow best practices," write how your "house rules" differ.</p><pre><code class="language-markdown">- All API endpoints must return within 200ms
+- Database queries must use the read replica for GET requests
+- Never store PII in logs, even at debug level
+- Use dependency injection for all services except logging
+</code></pre><p><strong>3. (optional) Provide examples of good and bad patterns</strong><br>If you see it making the same mistakes a lot, remind it what good looks like.</p><pre><code class="language-markdown"># Good: Explicit error handling with context
+try {
+  const user = await userService.find(id);
+  if (!user) throw new NotFoundError(`User ${id} not found`);
+} catch (error) {
+  logger.error('User lookup failed', { userId: id, error });
+  throw error;
+}
+
+# Bad: Swallowing errors
+const user = await userService.find(id).catch(() =&gt; null);
+</code></pre><p><strong>4. Version your AI context like code</strong><br>Your <code>claude.md</code> and <code>.cursorrules</code> files should be in version control, reviewed in PRs, and updated when your architecture changes. It needs to be reviewed by your very best team members, as a bad change can be repeated 100's of times a day.</p><p><strong> 5. Have the AI help you keep things fresh</strong><br>Stale AI context can be worse than no context; it actively misleads your assistant into suggesting outdated patterns. If you find yourself correcting a mistake, ask the AI what it learned from the interaction and if it should/could update the rule/context to avoid similar pitfalls in the future.<br><br>Happy prompting. Living in the future is AWESOME. As <a href="https://en.wikiquote.org/wiki/William_Gibson">William Gibson</a> says <strong><em>"The future is already here — it's just not very evenly distributed."</em></strong> ... <strong>yet</strong>.<br><br><em>(post created with help from Claude.ai, but based on my ideas, with human editing and such).</em></p>
+    </div>
+
+        <footer class="single-footer container small">
+            <div class="single-footer-left">
+                    <div class="navigation navigation-previous">
+                        <a class="navigation-link" href="/post/social-networks-are-killing-the-web/" aria-label="Previous post">
+                            <span class="navigation-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M26.667 14.667v2.667h-16L18 24.667l-1.893 1.893L5.547 16l10.56-10.56L18 7.333l-7.333 7.333h16z"></path>
+</svg></span>
+                        </a>
+                    </div>
+            </div>
+
+            <div class="single-footer-middle">
+                <div class="single-footer-top">
+                    <h3 class="single-footer-title">Published by:</h3>
+                    <div class="author-list">
+                            <a href="/author/a_c_m/" title="Alex McFadyen">
+                                <div class="author-image-placeholder u-placeholder square">
+                                    <img class="author-image u-object-fit" src="/content/images/size/w150/2021/03/1558123564131.jpg" alt="Alex McFadyen" loading="lazy">
+                                </div>
+                                <div class="author-details">
+                                    <div class="author-name">Alex McFadyen</div>
+                                    <div class="author-meta">London, UK</div>
+                                </div>
+                            </a>
+                    </div>
+                </div>
+
+                <div class="single-footer-bottom">
+                    <div class="share">
+    <a class="share-link share-link-twitter"
+        href="https://twitter.com/intent/tweet?url=https://www.acmconsulting.eu/post/ai-is-going-to-improve-your-documentation-but-not-the-way-you-expect/&text=AI%20is%20going%20to%20improve%20your%20documentation...%20but%20not%20the%20way%20you%20expect"
+        target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>        Tweet
+    </a>
+    <a class="share-link share-link-linkedin"
+        href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.acmconsulting.eu/post/ai-is-going-to-improve-your-documentation-but-not-the-way-you-expect/&title=AI%20is%20going%20to%20improve%20your%20documentation...%20but%20not%20the%20way%20you%20expect"
+        target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn icon</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>        Share
+    </a>
+    <a class="share-link share-link-ycombinator"
+        href="https://news.ycombinator.com/submitlink?u=https://www.acmconsulting.eu/post/ai-is-going-to-improve-your-documentation-but-not-the-way-you-expect/&t=AI%20is%20going%20to%20improve%20your%20documentation...%20but%20not%20the%20way%20you%20expect"
+        target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Y Combinator icon</title><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>        Share
+    </a>
+    <a class="share-link share-link-reddit"
+        href="http://www.reddit.com/submit?url=https://www.acmconsulting.eu/post/ai-is-going-to-improve-your-documentation-but-not-the-way-you-expect/&title=AI%20is%20going%20to%20improve%20your%20documentation...%20but%20not%20the%20way%20you%20expect"
+        target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Reddit icon</title><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>        Share
+    </a>
+</div>                </div>
+            </div>
+
+            <div class="single-footer-right">
+            </div>
+        </footer>
+</article>                    <section class="related-wrapper">
+            <div class="container small">
+                <h3 class="related-title">You might also like...</h3>
+                <div class="post-feed related-feed">
+                        <article class="feed post" data-month="October 2024">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Oct
+        </div>
+        <div class="feed-calendar-day">
+            03
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="https://images.unsplash.com/photo-1718664485487-5aad5f72dff2?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;M3wxMTc3M3wwfDF8c2VhcmNofDQzfHx2b2ljZSUyMHxlbnwwfHx8fDE3Mjc5NzUwMzJ8MA&amp;ixlib&#x3D;rb-4.0.3&amp;q&#x3D;80&amp;w&#x3D;2000 400w,
+https://images.unsplash.com/photo-1718664485487-5aad5f72dff2?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;M3wxMTc3M3wwfDF8c2VhcmNofDQzfHx2b2ljZSUyMHxlbnwwfHx8fDE3Mjc5NzUwMzJ8MA&amp;ixlib&#x3D;rb-4.0.3&amp;q&#x3D;80&amp;w&#x3D;2000 750w,
+https://images.unsplash.com/photo-1718664485487-5aad5f72dff2?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;M3wxMTc3M3wwfDF8c2VhcmNofDQzfHx2b2ljZSUyMHxlbnwwfHx8fDE3Mjc5NzUwMzJ8MA&amp;ixlib&#x3D;rb-4.0.3&amp;q&#x3D;80&amp;w&#x3D;2000 960w,
+https://images.unsplash.com/photo-1718664485487-5aad5f72dff2?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;M3wxMTc3M3wwfDF8c2VhcmNofDQzfHx2b2ljZSUyMHxlbnwwfHx8fDE3Mjc5NzUwMzJ8MA&amp;ixlib&#x3D;rb-4.0.3&amp;q&#x3D;80&amp;w&#x3D;2000 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="https://images.unsplash.com/photo-1718664485487-5aad5f72dff2?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;M3wxMTc3M3wwfDF8c2VhcmNofDQzfHx2b2ljZSUyMHxlbnwwfHx8fDE3Mjc5NzUwMzJ8MA&amp;ixlib&#x3D;rb-4.0.3&amp;q&#x3D;80&amp;w&#x3D;2000"
+                alt="Asymmetric Communication Speeds" loading="lazy">
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">Asymmetric Communication Speeds</h2>
+            <div class="feed-excerpt">And why sending voice notes might come accross as a bit arrogant.</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2024-10-03">
+                Oct 3, 2024
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    3 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/post/voice-to-text-is-great/" aria-label="Asymmetric Communication Speeds"></a>
+</article>                        <article class="feed post" data-month="August 2024">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Aug
+        </div>
+        <div class="feed-calendar-day">
+            20
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="/content/images/size/w400/2024/08/DALL-E-2024-08-20-10.44.22---A-futuristic--semi-robotic-bird-nest-situated-in-the-center-of-the-image--designed-to-look-like-it-is-made-from-a-combination-of-twigs--metal-wires--a.webp 400w,
+/content/images/size/w750/2024/08/DALL-E-2024-08-20-10.44.22---A-futuristic--semi-robotic-bird-nest-situated-in-the-center-of-the-image--designed-to-look-like-it-is-made-from-a-combination-of-twigs--metal-wires--a.webp 750w,
+/content/images/size/w960/2024/08/DALL-E-2024-08-20-10.44.22---A-futuristic--semi-robotic-bird-nest-situated-in-the-center-of-the-image--designed-to-look-like-it-is-made-from-a-combination-of-twigs--metal-wires--a.webp 960w,
+/content/images/size/w1140/2024/08/DALL-E-2024-08-20-10.44.22---A-futuristic--semi-robotic-bird-nest-situated-in-the-center-of-the-image--designed-to-look-like-it-is-made-from-a-combination-of-twigs--metal-wires--a.webp 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="/content/images/size/w750/2024/08/DALL-E-2024-08-20-10.44.22---A-futuristic--semi-robotic-bird-nest-situated-in-the-center-of-the-image--designed-to-look-like-it-is-made-from-a-combination-of-twigs--metal-wires--a.webp"
+                alt="Nest.JS 🦁 - Getting started video playlist" loading="lazy">
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">Nest.JS 🦁 - Getting started video playlist</h2>
+            <div class="feed-excerpt">Taming the Nest.JS lion 🦁 with a hand-picked YouTube playlist. From Zero to kinda know what's going on, in a bit over an hour.</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2024-08-20">
+                Aug 20, 2024
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    2 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/post/nest-js-a-quick-introduction/" aria-label="Nest.JS 🦁 - Getting started video playlist"></a>
+</article>                        <article class="feed post" data-month="July 2023">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Jul
+        </div>
+        <div class="feed-calendar-day">
+            03
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="/content/images/size/w400/2023/06/767544502_A-picture-of-the-mythical-round-toit--as-magical-o_xl-beta-v2-2-2.png 400w,
+/content/images/size/w750/2023/06/767544502_A-picture-of-the-mythical-round-toit--as-magical-o_xl-beta-v2-2-2.png 750w,
+/content/images/size/w960/2023/06/767544502_A-picture-of-the-mythical-round-toit--as-magical-o_xl-beta-v2-2-2.png 960w,
+/content/images/size/w1140/2023/06/767544502_A-picture-of-the-mythical-round-toit--as-magical-o_xl-beta-v2-2-2.png 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="/content/images/size/w750/2023/06/767544502_A-picture-of-the-mythical-round-toit--as-magical-o_xl-beta-v2-2-2.png"
+                alt="The Mythical Round Tuit" loading="lazy">
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">The Mythical Round Tuit</h2>
+            <div class="feed-excerpt">I first encountered one of these miraculous objects in the office of the headmaster of my primary school. It's stayed with me ever since.</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2023-07-03">
+                Jul 3, 2023
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    3 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/post/a-mythical-round-tuit/" aria-label="The Mythical Round Tuit"></a>
+</article>                        <article class="feed post" data-month="March 2023">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Mar
+        </div>
+        <div class="feed-calendar-day">
+            10
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="https://images.unsplash.com/photo-1621410153570-9c55676b0157?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDJ8fGZhaWx1cmV8ZW58MHx8fHwxNjc4NDQ1OTIw&amp;ixlib&#x3D;rb-4.0.3&amp;q&#x3D;80&amp;w&#x3D;2000 400w,
+https://images.unsplash.com/photo-1621410153570-9c55676b0157?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDJ8fGZhaWx1cmV8ZW58MHx8fHwxNjc4NDQ1OTIw&amp;ixlib&#x3D;rb-4.0.3&amp;q&#x3D;80&amp;w&#x3D;2000 750w,
+https://images.unsplash.com/photo-1621410153570-9c55676b0157?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDJ8fGZhaWx1cmV8ZW58MHx8fHwxNjc4NDQ1OTIw&amp;ixlib&#x3D;rb-4.0.3&amp;q&#x3D;80&amp;w&#x3D;2000 960w,
+https://images.unsplash.com/photo-1621410153570-9c55676b0157?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDJ8fGZhaWx1cmV8ZW58MHx8fHwxNjc4NDQ1OTIw&amp;ixlib&#x3D;rb-4.0.3&amp;q&#x3D;80&amp;w&#x3D;2000 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="https://images.unsplash.com/photo-1621410153570-9c55676b0157?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDJ8fGZhaWx1cmV8ZW58MHx8fHwxNjc4NDQ1OTIw&amp;ixlib&#x3D;rb-4.0.3&amp;q&#x3D;80&amp;w&#x3D;2000"
+                alt="Victory from failure?" loading="lazy">
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">Victory from failure?</h2>
+            <div class="feed-excerpt">Failure should be an option, and sometimes a clear failure is better than an opaque success.</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2023-03-10">
+                Mar 10, 2023
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    3 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/post/victory-from-failure/" aria-label="Victory from failure?"></a>
+</article>                        <article class="feed post featured" data-month="December 2022">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Dec
+        </div>
+        <div class="feed-calendar-day">
+            05
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="/content/images/size/w400/2022/12/00115.png 400w,
+/content/images/size/w750/2022/12/00115.png 750w,
+/content/images/size/w960/2022/12/00115.png 960w,
+/content/images/size/w1140/2022/12/00115.png 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="/content/images/size/w750/2022/12/00115.png"
+                alt="ChatGPT is going to lie to you" loading="lazy">
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">ChatGPT is going to lie to you</h2>
+            <div class="feed-excerpt">and unless you are an expert, you might not be able to tell.</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2022-12-05">
+                Dec 5, 2022
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    2 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/post/chatgpt-is-going-to-lie-to-you/" aria-label="ChatGPT is going to lie to you"></a>
+</article>                </div>
+            </div>
+        </section>
+                </main>
+</div>
+
+
+        </div>
+
+        <footer class="site-footer container">
+    <div class="footer-inner">
+        <div class="footer-left">
+            <div class="copyright">
+                acmConsulting © 2025
+            </div>
+        </div>
+
+        <nav class="footer-nav">
+                    <a class="menu-item menu-item-data-privacy" href="https://www.acmconsulting.eu/privacy/">Data &amp; Privacy</a>
+        <span class="sep">•</span>
+        <a class="menu-item menu-item-contact" href="https://www.acmconsulting.eu/contact/">Contact</a>
+        <span class="sep">•</span>
+
+            <a class="menu-item badge" href="https://ghost.org/" target="_blank" rel="noopener noreferrer">Published with Ghost</a>
+        </nav>
+
+        <div class="footer-right">
+            <div class="social">
+    <a class="social-item social-item-linkedin"
+        href="https://www.linkedin.com/in/alexmcfadyen/" target="_blank"
+        rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn icon</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>    </a>
+
+    <a class="social-item social-item-github"
+        href="https://github.com/a-c-m" target="_blank"
+        rel="noopener noreferrer" aria-label="Github">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>    </a>
+
+
+        <a class="social-item social-item-twitter"
+            href="https://twitter.com/a_c_m" target="_blank"
+            rel="noopener noreferrer" aria-label="Twitter">
+            <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>        </a>
+
+    <a class="social-item social-item-rss"
+        href="/rss" target="_blank"
+        rel="noopener noreferrer" aria-label="RSS">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+    </a>
+</div>        </div>
+    </div>
+</footer>        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe.
+        It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides.
+          PhotoSwipe keeps only 3 of them in the DOM to save memory.
+          Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>    </div>
+
+    <script>
+        if (document.body.classList.contains('with-full-cover')) {
+            document.getElementsByClassName('cover')[0].style.height = window.innerHeight + 'px';
+        }
+    </script>
+
+    <script>
+        var feed = document.querySelector('.post-feed');
+        if (feed && !feed.classList.contains('related-feed')) {
+            var wrapper = document.querySelector('.feed-layout');
+            var feedLayout = localStorage.getItem('edition_layout');
+            switch (feedLayout) {
+                case 'compact':
+                    wrapper.classList.remove('expanded');
+                    feed.classList.remove('expanded');
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+
+    <script src="/assets/built/main.min.js?v=c7c90b3252"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
+</body>
+
+</html>
