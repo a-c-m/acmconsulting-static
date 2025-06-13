@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AI is going to improve your documentation... but not the way you expect</title>
-    <link rel="stylesheet" href="/assets/built/screen.css?v=c7c90b3252">
+    <link rel="stylesheet" href="/assets/built/screen.css?v=8a7ab650d0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -21,7 +21,7 @@
     <meta property="og:url" content="https://www.acmconsulting.eu/post/ai-is-going-to-improve-your-documentation-but-not-the-way-you-expect/" />
     <meta property="og:image" content="https://www.acmconsulting.eu/content/images/2025/06/ChatGPT-Image-Jun-13--2025--10_30_36-AM.png" />
     <meta property="article:published_time" content="2025-06-13T09:38:44.000Z" />
-    <meta property="article:modified_time" content="2025-06-13T09:38:44.000Z" />
+    <meta property="article:modified_time" content="2025-06-13T10:12:10.000Z" />
     <meta property="article:tag" content="Software Development" />
     <meta property="article:tag" content="Productivity" />
     <meta property="article:tag" content="Interesting" />
@@ -69,7 +69,7 @@
     "headline": "AI is going to improve your documentation... but not the way you expect",
     "url": "https://www.acmconsulting.eu/post/ai-is-going-to-improve-your-documentation-but-not-the-way-you-expect/",
     "datePublished": "2025-06-13T09:38:44.000Z",
-    "dateModified": "2025-06-13T09:38:44.000Z",
+    "dateModified": "2025-06-13T10:12:10.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "https://www.acmconsulting.eu/content/images/2025/06/ChatGPT-Image-Jun-13--2025--10_30_36-AM.png",
@@ -151,8 +151,8 @@
 .gh-post-upgrade-cta a.gh-btn:hover {
     opacity: 0.92;
 }</style>
-    <script defer src="/public/cards.min.js?v=c7c90b3252"></script>
-    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=c7c90b3252">
+    <script defer src="/public/cards.min.js?v=8a7ab650d0"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=8a7ab650d0">
     <!-- Redirect to HTTPS -->
 <script type="text/javascript">
     var host = "acmconsulting.eu";
@@ -281,7 +281,7 @@ ga('send', 'pageview');
     </header>
 
     <div class="single-content kg-canvas u-text-format">
-        <p><strong>TL;DR</strong>: Forget AI replacing documentation. I think it's making it more critical than ever. Every AI interaction is like onboarding a new developer who knows nothing about your codebase. The better your docs, the better your AI performs. We're entering an era where documentation quality directly impacts development velocity, and your senior developers' time might be better spent writing context for AI, not code.</p><h2 id="the-brutal-reality-of-ai-assisted-development">The brutal reality of AI-assisted development</h2><p>No, documentation has not become obsolete because "AI can just read the code." In fact, the opposite is true. Documentation has become the most high-leverage activity in your development workflow, and here's why: every time you prompt an AI agent, you're essentially onboarding a new junior developer who has <strong>zero context</strong> about your codebase, your architectural decisions, or your team's conventions.</p><p>Think about it. You pay for every token the AI processes. You wait for every context window to be filled. And most critically, the AI starts from scratch every single time. That brilliant refactoring it helped you with yesterday? Gone. The deep understanding of your module boundaries? Vanished. The nuanced grasp of why you chose that particular design pattern? Non-existent.<br><br>It's also better for the environment. AI inference is not cheap, if you can reduce the overhead of every request you make, its not only good for your token budget, its good for the planet! (I'm not kidding).</p><p>This is where the paradigm shift happens. <strong>Good documentation is no longer just helpful, it's the primary interface between your team's knowledge and your AI tools.</strong></p><h2 id="your-documentation-is-now-code%E2%80%94treat-it-that-way">Your documentation is now code—treat it that way</h2><p>Modern AI-assisted development relies on specific documentation patterns that directly impact AI performance. The emergence of files like <strong><code>.cursorrules</code></strong> and <strong><code>claude.md</code></strong> isn't just another config file trend—these are the instruction manuals that transform a generic AI into your team's specialized assistant.</p><p>Here's what actually works:</p><p><strong>Context files are your new superpower.</strong> A well-crafted <code>claude.md</code> file in your project root should contain:</p><ul><li>Your project's architecture decisions and the <strong>why</strong> behind them</li><li>Code style preferences that go beyond what a linter can catch</li><li>Common patterns and anti-patterns specific to your codebase</li><li>Module boundaries and interaction rules</li><li>Performance considerations and optimization strategies</li><li>It is not your <code>README.md</code> focus on what the AI needs, and keep what the humans need in the <code>README.md</code>, minimize overlap.</li></ul><p><strong>Modular documentation beats monolithic files.</strong> Instead of one massive documentation file, you could structure your AI context like your code:</p><pre><code>CLAUDE.md               # Project wide context
+        <p><strong>TL;DR</strong>: Forget AI replacing documentation. I think it's making documentation more critical than ever. Every AI interaction is like onboarding a new developer who knows nothing about your codebase. The better your docs, the better your AI performs. We're entering an era where documentation quality directly impacts development velocity, and your senior developers' time might be better spent writing context for AI, not code.</p><h2 id="the-brutal-reality-of-ai-assisted-development">The brutal reality of AI-assisted development</h2><p>No, documentation has not become obsolete because "AI can just read the code." In fact, the opposite is true. Documentation has become the most high-leverage activity in your development workflow, and here's why: every time you prompt an AI agent, you're essentially onboarding a new junior developer who has <strong>zero context</strong> about your codebase, your architectural decisions, or your team's conventions.</p><p>Think about it. You pay for every token the AI processes. You wait for every context window to be filled. And most critically, the AI starts from scratch every single time. That brilliant refactoring it helped you with yesterday? Gone. The deep understanding of your module boundaries? Vanished. The nuanced grasp of why you chose that particular design pattern? Non-existent.<br><br>It's also better for the environment. AI inference is not cheap, if you can reduce the overhead of every request you make, its not only good for your token budget, its good for the planet! (I'm not kidding).</p><p>This is where the paradigm shift happens. <strong>Good documentation is no longer just helpful, it's the primary interface between your team's knowledge and your AI tools.</strong></p><h2 id="your-documentation-is-now-code%E2%80%94treat-it-that-way">Your documentation is now code—treat it that way</h2><p>Modern AI-assisted development relies on specific documentation patterns that directly impact AI performance. The emergence of files like <strong><code>.cursorrules</code></strong> and <strong><code>claude.md</code></strong> isn't just another config file trend—these are the instruction manuals that transform a generic AI into your team's specialized assistant.</p><p>Here's what actually works:</p><p><strong>Context files are your new superpower.</strong> A well-crafted <code>claude.md</code> file in your project root should contain:</p><ul><li>Your project's architecture decisions and the <strong>why</strong> behind them</li><li>Code style preferences that go beyond what a linter can catch</li><li>Common patterns and anti-patterns specific to your codebase</li><li>Module boundaries and interaction rules</li><li>Performance considerations and optimization strategies</li><li>It is not your <code>README.md</code> focus on what the AI needs, and keep what the humans need in the <code>README.md</code>, minimize overlap.</li></ul><p><strong>Modular documentation beats monolithic files.</strong> Instead of one massive documentation file, you could structure your AI context like your code:</p><pre><code>CLAUDE.md               # Project wide context
 
 .claude/
 └── commands/
@@ -308,7 +308,7 @@ try {
 
 # Bad: Swallowing errors
 const user = await userService.find(id).catch(() =&gt; null);
-</code></pre><p><strong>4. Version your AI context like code</strong><br>Your <code>claude.md</code> and <code>.cursorrules</code> files should be in version control, reviewed in PRs, and updated when your architecture changes. It needs to be reviewed by your very best team members, as a bad change can be repeated 100's of times a day.</p><p><strong> 5. Have the AI help you keep things fresh</strong><br>Stale AI context can be worse than no context; it actively misleads your assistant into suggesting outdated patterns. If you find yourself correcting a mistake, ask the AI what it learned from the interaction and if it should/could update the rule/context to avoid similar pitfalls in the future.<br><br>Happy prompting. Living in the future is AWESOME. As <a href="https://en.wikiquote.org/wiki/William_Gibson">William Gibson</a> says <strong><em>"The future is already here — it's just not very evenly distributed."</em></strong> ... <strong>yet</strong>.<br><br><em>(post created with help from Claude.ai, but based on my ideas, with human editing and such).</em></p>
+</code></pre><p><strong>4. Version your AI context like code</strong><br>Your <code>claude.md</code> and <code>.cursorrules</code> files should be in version control, reviewed in PRs, and updated when your architecture changes. It needs to be reviewed by your very best team members, as a bad change can be repeated 100's of times a day.</p><p><strong> 5. Have the AI help you keep things fresh</strong><br>Stale AI context can be worse than no context; it actively misleads your assistant into suggesting outdated patterns. If you find yourself correcting a mistake, ask the AI what it learned from the interaction and if it should/could update the rule/context to avoid similar pitfalls in the future.</p><p><strong><em>BONUS</em></strong>: Here is a Claude command you can use to help keep its context freshs: <a href="https://gist.github.com/a-c-m/f4cead5ca125d2eaad073dfd71efbcfc">reflection.md</a><br><br>Happy prompting. Living in the future is AWESOME. As <a href="https://en.wikiquote.org/wiki/William_Gibson">William Gibson</a> says <em><strong>"The future is already here — it's just not very evenly distributed."</strong></em> ... <strong>yet</strong>.<br><br><em>(post created with help from Claude.ai, but based on my ideas, with human editing and such).</em></p>
     </div>
 
         <footer class="single-footer container small">
@@ -696,7 +696,7 @@ https://images.unsplash.com/photo-1621410153570-9c55676b0157?crop&#x3D;entropy&a
         }
     </script>
 
-    <script src="/assets/built/main.min.js?v=c7c90b3252"></script>
+    <script src="/assets/built/main.min.js?v=8a7ab650d0"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
