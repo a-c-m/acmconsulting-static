@@ -1,105 +1,115 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[acmConsulting]]></title><description><![CDATA[The blog, posts and ramblings of Alex McFadyen (a_c_m)]]></description><link>https://www.acmconsulting.eu/</link><image><url>https://www.acmconsulting.eu/favicon.png</url><title>acmConsulting</title><link>https://www.acmconsulting.eu/</link></image><generator>Ghost 4.47</generator><lastBuildDate>Mon, 20 Oct 2025 08:52:36 GMT</lastBuildDate><atom:link href="https://www.acmconsulting.eu/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[AI Broke the Automation Payback Calculation]]></title><description><![CDATA[AI collapsed custom tooling investment from weeks to hours, breaking the automation economics that held for decades. The question changed from "how do I solve this problem now?" to "can I make solving this problem easier now and in the future?"]]></description><link>https://www.acmconsulting.eu/post/ai-broke-the-automation-payback-calculation/</link><guid isPermaLink="false">68ee0abc54d9fe6b8304ac5a</guid><category><![CDATA[development]]></category><category><![CDATA[ai]]></category><category><![CDATA[automation]]></category><category><![CDATA[tooling]]></category><dc:creator><![CDATA[Alex McFadyen]]></dc:creator><pubDate>Mon, 20 Oct 2025 08:47:43 GMT</pubDate><media:content url="https://www.acmconsulting.eu/content/images/2025/10/ChatGPT-Image-Oct-14--2025--09_37_24-AM.png" medium="image"/><content:encoded><![CDATA[<img src="https://www.acmconsulting.eu/content/images/2025/10/ChatGPT-Image-Oct-14--2025--09_37_24-AM.png" alt="AI Broke the Automation Payback Calculation"><p>We wanted to upgrade from ESLint to <a href="https://biomejs.dev/">Biome</a>. <strong>Speed upgrade plus stricter rules</strong> from <a href="https://www.ultracite.ai/">Ultracite</a> sounded perfect. Except we knew from experience swapping linter/upgrading rulesets can turn into a <strong>multi-week effort, maybe months</strong>. Fixing straggling bugs, making compromises, turning off rules we couldn&apos;t immediately satisfy.</p><p>ESLint&apos;s <a href="https://eslint.org/docs/latest/use/suppressions">new suppression feature</a> <strong>would&apos;ve been ideal for this exact situation</strong>. Bulk suppression lets you accept current errors, enforce rules on new code only. But <strong>Biome didn&apos;t have it</strong>.</p><p>So we built an MVP for biome suppression, <strong>In 30 minutes.</strong></p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://github.com/a-c-m/biome-suppressed"><div class="kg-bookmark-content"><div class="kg-bookmark-title">GitHub - a-c-m/biome-suppressed: A fast, lightweight drop-in wrapper for `biome check` that maintains an error baseline and only fails on new errors. Automatically improves the baseline when fewer errors are found.</div><div class="kg-bookmark-description">A fast, lightweight drop-in wrapper for `biome check` that maintains an error baseline and only fails on new errors. Automatically improves the baseline when fewer errors are found. - a-c-m/biome-s...</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://github.com/fluidicon.png" alt="AI Broke the Automation Payback Calculation"><span class="kg-bookmark-author">GitHub</span><span class="kg-bookmark-publisher">a-c-m</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://opengraph.githubassets.com/1670ce6f9a9ddb48696cfa5eecc1ee39215dadaeba113e19caed117055e60711/a-c-m/biome-suppressed" alt="AI Broke the Automation Payback Calculation"></div></a></figure><h2 id="the-two-xkcds-that-explain-everything">The two XKCDs that explain everything</h2><h3 id="the-general-problem">The General Problem</h3><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://www.acmconsulting.eu/content/images/2025/10/image.png" class="kg-image" alt="AI Broke the Automation Payback Calculation" loading="lazy" width="550" height="230"><figcaption>https://xkcd.com/974/</figcaption></figure><p><a href="https://xkcd.com/974/">XKCD 974</a> perfectly captures the old trap: &quot;I could spend 5 minutes doing this manually,<strong> or spend all day automating it</strong>.&quot; Then you spend all day, plus debug time, plus maintenance.</p><p>This used to be genuine wisdom. <strong>Automation was expensive.</strong> Building custom tools required deep expertise, significant time investment, and ongoing maintenance burden. The ROI calculation rarely made sense for one-off or team-specific problems.</p><p><strong>That calculation has changed.</strong></p><h3 id="the-payback-grid">The Payback Grid</h3><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://www.acmconsulting.eu/content/images/2025/10/image-1.png" class="kg-image" alt="AI Broke the Automation Payback Calculation" loading="lazy" width="1141" height="927" srcset="https://www.acmconsulting.eu/content/images/size/w600/2025/10/image-1.png 600w, https://www.acmconsulting.eu/content/images/size/w1000/2025/10/image-1.png 1000w, https://www.acmconsulting.eu/content/images/2025/10/image-1.png 1141w" sizes="(min-width: 720px) 720px"><figcaption>https://xkcd.com/1205/</figcaption></figure><p><a href="https://xkcd.com/1205/">XKCD 1205</a> shows the classic automation payback grid. It answers: &quot;How much time can you spend automating this task before you&apos;re losing time over a 5-year period?&quot;</p><p>The grid is still mathematically correct. <strong>The difference is that the time investment to build these tools dropped from weeks to hours, sometimes minutes.</strong> What required a 5-year payback period to justify now pays back in months.</p><blockquote>See the appendix for 1-year and 2-year versions of this grid. Built with AI, naturally.</blockquote><h2 id="what-this-actually-looks-like">What this actually looks like</h2><h3 id="biome-suppressed-30-minutes-to-poc">biome-suppressed: 30 minutes to POC</h3><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://github.com/a-c-m/biome-suppressed"><div class="kg-bookmark-content"><div class="kg-bookmark-title">GitHub - a-c-m/biome-suppressed: A fast, lightweight drop-in wrapper for `biome check` that maintains an error baseline and only fails on new errors. Automatically improves the baseline when fewer errors are found.</div><div class="kg-bookmark-description">A fast, lightweight drop-in wrapper for `biome check` that maintains an error baseline and only fails on new errors. Automatically improves the baseline when fewer errors are found. - a-c-m/biome-s...</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://github.com/fluidicon.png" alt="AI Broke the Automation Payback Calculation"><span class="kg-bookmark-author">GitHub</span><span class="kg-bookmark-publisher">a-c-m</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://opengraph.githubassets.com/1670ce6f9a9ddb48696cfa5eecc1ee39215dadaeba113e19caed117055e60711/a-c-m/biome-suppressed" alt="AI Broke the Automation Payback Calculation"></div></a></figure><p>We really wanted <a href="https://biomejs.dev/">Biome</a>&apos;s speed and built in formatter, its great. <strong>Orders of magnitude faster</strong> than ESLint+Prettier. And we wanted to adopt <a href="https://www.ultracite.ai/">Ultracite</a>&apos;s AI-powered linting rules&#x2014;<strong>much more aggressive</strong>, catching patterns traditional linters miss.</p><p>But we&apos;d been down this road before. Upgrading linters on a large codebase means:</p><!--kg-card-begin: markdown--><ul>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[acmConsulting]]></title><description><![CDATA[The blog, posts and ramblings of Alex McFadyen (a_c_m)]]></description><link>https://www.acmconsulting.eu/</link><image><url>https://www.acmconsulting.eu/favicon.png</url><title>acmConsulting</title><link>https://www.acmconsulting.eu/</link></image><generator>Ghost 4.47</generator><lastBuildDate>Mon, 20 Oct 2025 09:42:31 GMT</lastBuildDate><atom:link href="https://www.acmconsulting.eu/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[AI Broke the Automation Payback Calculation]]></title><description><![CDATA[AI means we can now afford to ask question "can I make this easier?" instead of just "how do I solve this problem?"]]></description><link>https://www.acmconsulting.eu/post/ai-broke-the-automation-payback-calculation/</link><guid isPermaLink="false">68ee0abc54d9fe6b8304ac5a</guid><category><![CDATA[development]]></category><category><![CDATA[ai]]></category><category><![CDATA[automation]]></category><category><![CDATA[tooling]]></category><dc:creator><![CDATA[Alex McFadyen]]></dc:creator><pubDate>Mon, 20 Oct 2025 08:47:43 GMT</pubDate><media:content url="https://www.acmconsulting.eu/content/images/2025/10/ChatGPT-Image-Oct-14--2025--09_37_24-AM.png" medium="image"/><content:encoded><![CDATA[<img src="https://www.acmconsulting.eu/content/images/2025/10/ChatGPT-Image-Oct-14--2025--09_37_24-AM.png" alt="AI Broke the Automation Payback Calculation"><p><strong>TL;DR</strong>:<strong> </strong>AI has also sped up tooling development,<strong> from weeks to hours</strong>, breaking the automation economics calculations that held for decades. This 6-minute read is for teams still manually fighting workflow friction instead of investing in solutions to smooth the path.</p><p><strong>In this post, I&apos;ll explain why and how things have changed, and give you 3 real world examples.</strong></p><!--kg-card-begin: markdown--><ul>
+<li><strong><a href="#biome-suppressed-30-minutes-to-published-tool">biome-suppressed</a></strong> - Moving to Biome without the multi-week refactor (30 minutes)</li>
+<li><strong><a href="#git-stats-5-minutes-to-weekly-reference">Git stats</a></strong> - Measuring AI adoption through git analysis (5 minutes)</li>
+<li><strong><a href="#custom-dorametrics-few-hours-to-ongoing-optimization">Custom DORA reporting</a></strong> - Team velocity tracking with custom HTML reporting (few hours)</li>
+</ul>
+<!--kg-card-end: markdown--><p>You can also expect some<strong> fantastic </strong><a href="https://xkcd.com/"><strong>XKCD</strong></a><strong> sketches</strong> I&apos;ve borrowed to support to make my point, and, as always, I&apos;ll challenge you to <strong>try out some tool making</strong> for yourself. </p><h2 id="i-wanted-something-which-didnt-exist-yet">I wanted something which didn&apos;t exist yet</h2><p>We wanted to upgrade from ESLint to <a href="https://biomejs.dev/">Biome</a>. <strong>Speed upgrade plus stricter rules</strong> from <a href="https://www.ultracite.ai/">Ultracite</a> sounded perfect. Except we knew from experience this was a <strong>multi-week effort, maybe months</strong>. Fixing straggling bugs, making compromises, turning off rules we couldn&apos;t immediately satisfy.</p><p>ESLint&apos;s <a href="https://eslint.org/docs/latest/use/suppressions">new </a><strong><a href="https://eslint.org/docs/latest/use/suppressions">bulk suppression feature</a> would&apos;ve been ideal</strong> for this exact situation&#x2014;accept current errors, enforce rules on new code only. <strong>But Biome didn&apos;t have it</strong>.</p><p><strong>So we built it</strong>... <em>In 30 minutes...</em> more on this later. First:</p><h2 id="the-two-xkcds-that-explain-everything">The two XKCDs that explain everything</h2><h3 id="the-general-problem">The General Problem</h3><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://www.acmconsulting.eu/content/images/2025/10/image.png" class="kg-image" alt="AI Broke the Automation Payback Calculation" loading="lazy"><figcaption>https://xkcd.com/974/</figcaption></figure><p><a href="https://xkcd.com/974/">XKCD 974</a> perfectly captures the old trap: &quot;<strong>I could spend 5 minutes</strong> doing this manually, or spend all day automating it.&quot; <strong>Then you spend all day</strong>, plus debug time, plus maintenance.</p><p>This used to be genuine wisdom. <strong>Automation was expensive.</strong> Building custom tools required deep expertise, significant time investment, and ongoing maintenance burden. The <strong>ROI calculation rarely made sense</strong> for one-off or team-specific problems.</p><p><strong>That calculation has now changed.</strong></p><h3 id="the-payback-grid">The Payback Grid</h3><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://www.acmconsulting.eu/content/images/2025/10/image-1.png" class="kg-image" alt="AI Broke the Automation Payback Calculation" loading="lazy"><figcaption>https://xkcd.com/1205/</figcaption></figure><p><a href="https://xkcd.com/1205/">XKCD 1205</a> shows the classic automation payback grid. It answers: &quot;How <strong>much time can you spend</strong> automating this task before you&apos;re losing time over a 5-year period?&quot;</p><p>The grid is still mathematically correct. <strong>The difference is that the time investment to build these tools dropped from weeks to hours, sometimes minutes.</strong> What required a 5-year payback period to justify now pays back in months.</p><blockquote>See the appendix for 1-year and 2-year versions of this grid. Built with AI, naturally.</blockquote><h2 id="what-this-actually-looks-like">What this actually looks like</h2><h3 id="biome-suppressed-30-minutes-to-published-tool">biome-suppressed: 30 minutes to published tool</h3><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://github.com/a-c-m/biome-suppressed"><div class="kg-bookmark-content"><div class="kg-bookmark-title">GitHub - a-c-m/biome-suppressed: A fast, lightweight drop-in wrapper for `biome check` that maintains an error baseline and only fails on new errors. Automatically improves the baseline when fewer errors are found.</div><div class="kg-bookmark-description">A fast, lightweight drop-in wrapper for `biome check` that maintains an error baseline and only fails on new errors. Automatically improves the baseline when fewer errors are found. - a-c-m/biome-s...</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://github.com/fluidicon.png" alt="AI Broke the Automation Payback Calculation"><span class="kg-bookmark-author">GitHub</span><span class="kg-bookmark-publisher">a-c-m</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://opengraph.githubassets.com/536573b62c2745b50ba2d1bced27fa28f0fa1b94264278f165760e51ab12b6bd/a-c-m/biome-suppressed" alt="AI Broke the Automation Payback Calculation"></div></a></figure><p>We really wanted <a href="https://biomejs.dev/">Biome</a>&apos;s speed. <strong>Orders of magnitude faster</strong> than <a href="https://eslint.org/">ESLint</a> on our codebase. And we wanted to adopt <a href="https://www.ultracite.ai/">Ultracite</a>&apos;s AI-powered linting rules&#x2014;<strong>much more aggressive</strong>, catching patterns traditional linters miss.</p><p>But we&apos;d been down this road before. Upgrading linters on a large codebase means:</p><!--kg-card-begin: markdown--><ul>
 <li><strong>Weeks fixing violations</strong> in legacy code</li>
 <li>Compromises: disabling rules that are &quot;too strict&quot;</li>
-<li><strong>Bugs introduced</strong> while refactoring to satisfy new rules</li>
-<li>Team friction over what to <strong>fix now vs. later</strong></li>
-<li>A short term pain, for long term gain</li>
+<li>Bugs introduced while refactoring to satisfy new rules</li>
+<li>Team friction over what to fix now vs. later</li>
 </ul>
-<!--kg-card-end: markdown--><p>ESLint&apos;s <a href="https://eslint.org/docs/latest/use/suppressions">new suppression feature</a> solved this elegantly. Run the linter, accept current errors, ignore them in future runs. <strong>New code follows new rules, legacy code gets fixed gradually.</strong> Perfect.</p><p>Biome didn&apos;t have this feature.</p><p><strong>Traditional approach:</strong> wait for the feature, or stick with slow tooling, or commit to the multi-week refactor. No option there fills me with joy.</p><p><strong>AI approach:</strong> 30 minutes with Claude, working prototype. Then an hour, to something the team could use daily. Finally a few more and we have a NPM&apos;ed published package for anyone to use.</p><p>We built <a href="https://github.com/a-c-m/biome-suppressed">biome-suppressed</a>, a wrapper that sits above Biome and provides the same suppression workflow. Tested it locally for a few weeks, fixed issues, refined the implementation. <strong>Now it&apos;s published, anyone can use it.</strong></p><p></p><p>The result: we adopted Biome&apos;s speed and Ultracite&apos;s aggressive rulesets <strong>without the massive refactor</strong>. New code meets high standards, legacy code doesn&apos;t block progress.</p><h3 id="git-stats-10-minutes-to-weekly-reference">Git stats: 10 minutes to weekly reference</h3><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://gist.github.com/a-c-m/e65a4ab3ced328a7b136538147c4fec0"><div class="kg-bookmark-content"><div class="kg-bookmark-title">Git stats per dev (LOC) with delta and comparison</div><div class="kg-bookmark-description">Git stats per dev (LOC) with delta and comparison. GitHub Gist: instantly share code, notes, and snippets.</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://gist.github.com/fluidicon.png" alt="AI Broke the Automation Payback Calculation"><span class="kg-bookmark-author">Gist</span><span class="kg-bookmark-publisher">262588213843476</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://github.githubassets.com/assets/gist-og-image-54fd7dc0713e.png" alt="AI Broke the Automation Payback Calculation"></div></a></figure><p>We wanted to measure AI adoption within our team. AI helps you commit more and faster - so we wanted to measure that. Checking for commits and lines of code changed. Yes, I know, <strong>terrible metric for quality</strong>. But for measuring AI impact on output? Actually quite useful.</p><p><strong>Traditional approach:</strong> manually run git log, parse output, track in spreadsheet, compare week-over-week.</p><p><strong>AI approach:</strong> asked an agent to write a script. Five minutes later, <a href="https://gist.github.com/a-c-m/e65a4ab3ced328a7b136538147c4fec0">working tool</a>.</p><p>The script analyzes git history, counts commits and lines changed by developer, compares to previous weeks. We use it every week. Short <strong>Ten-minute investment, ongoing value</strong>, but also deeper conversations about adoption patterns we wouldn&apos;t have had otherwise.</p><p>Whats been an added bonus, was to feed the results of this script into an AI for its own insights, as part of our weekly retrospective!</p><h3 id="custom-code-metrics-few-hours-to-ongoing-optimization">Custom code metrics: few hours to ongoing optimization</h3><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://www.acmconsulting.eu/content/images/2025/10/Screenshot-2025-10-14-at-10.03.09.png" class="kg-image" alt="AI Broke the Automation Payback Calculation" loading="lazy" width="2000" height="927" srcset="https://www.acmconsulting.eu/content/images/size/w600/2025/10/Screenshot-2025-10-14-at-10.03.09.png 600w, https://www.acmconsulting.eu/content/images/size/w1000/2025/10/Screenshot-2025-10-14-at-10.03.09.png 1000w, https://www.acmconsulting.eu/content/images/size/w1600/2025/10/Screenshot-2025-10-14-at-10.03.09.png 1600w, https://www.acmconsulting.eu/content/images/size/w2400/2025/10/Screenshot-2025-10-14-at-10.03.09.png 2400w" sizes="(min-width: 720px) 720px"><figcaption>PR report for Ultracite, tool can also generate active branch and deployment reporting</figcaption></figure><p>We wanted to evaluate team velocity using DORA metrics for some monthly reviews. We wanted to also dive deeper into the numbers behind DORA, to help us identify patterns and behaviors. Tools like <a href="https://linearb.io/">LinearB</a> are great, but we needed <strong>specific customizations</strong> for our reporting needs.</p><p><strong>Traditional approach:</strong> pay for tool, export data, customize in spreadsheets, repeat quarterly.</p><p><strong>AI approach:</strong> few hours with Claude building a custom analyzer. Working title is gits-dont-lie, we have <strong>extatly the data we wanted</strong> in a customizable report.</p><p>It analyzes git history, examines open and closed branches, generates reports with filtering, sorting, and graphing. <strong>The resulting data gave us talking points</strong> to both start optimization and monitor progress over time.</p><p>This one I haven&apos;t released publicly yet. Depending on interest, might release as a product or make available on request.</p><h2 id="the-jevons-paradox-for-tooling">The Jevons Paradox for tooling</h2><p><a href="https://en.wikipedia.org/wiki/Jevons_paradox">Jevons Paradox</a> is an economic theory that when technology improves the efficiency of resource use, overall consumption often increases rather than decreases. <strong>Greater efficiency lowers costs, leading to higher demand.</strong></p><p>The same thing can happen with custom tooling.</p><p>When building tools becomes cheaper, you build more tools. But it&apos;s not just quantity&#x2014;<strong>the tools unlock workflows you didn&apos;t anticipate.</strong></p><p>The git stats tool wasn&apos;t just about measurement. <strong>It changed the conversations</strong> we had about AI adoption. Having weekly data visible shifted discussions from &quot;are we using AI?&quot; to &quot;why did velocity spike here?&quot; and &quot;what patterns correlate with impact?&quot;</p><blockquote>Data visualization that was &quot;too expensive&quot; becomes standard. Custom dashboards appear for team-specific needs. The tool&apos;s existence creates new opportunities.</blockquote><h2 id="the-team-structure-question">The team structure question</h2><p>Not everyone needs to shift their mindset to tool-making. <strong>But someone should be asking the question.</strong></p><p>Here&apos;s what I&apos;m seeing: <strong>managers are doing software development again.</strong> AI coding agents lowered the barrier enough that engineering managers (some of whom might not have written production code in years) are now empowered to build tools for their teams.</p><p>They&apos;re actually the perfect candidates for this. <strong>They have the broader scope.</strong> They see workflow friction across multiple developers. They understand team-wide pain points. When they invest 30 minutes building a tool, it often applies to several people, not just themselves.</p><p>The multiplication effect here is substantial. A manager who understands <strong>both the team&apos;s needs and has the technical ability</strong> to quickly prototype solutions can have outsized impact. They&apos;re not necessarily writing production features, but they&apos;re building the tooling that makes their team more effective.</p><p>If you are in a larger org, you may have a <strong>DevEx/Platform team</strong> who does this kind of work. Which is great, but also, they may not have the bandwith/same priorities as you, for your minor needs, so DIY can still be very powerful and empowering.</p><p>Someone can now consider: <strong>&quot;Can I make solving this problem easier now and in the future?&quot;</strong> instead of just &quot;How do I solve this problem now?&quot;. </p><p><strong>The multiplication effect compounds.</strong> A 30-minute investment in biome-suppressed unblocked weeks of potential linting migration work across multiple projects. A 5-minute git stats script influenced quarterly planning discussions. The benefits cascade.</p><h2 id="try-this-next">Try this next</h2><p><strong>Pick one workflow annoyance</strong> this week:</p><!--kg-card-begin: markdown--><ul>
+<!--kg-card-end: markdown--><p>ESLint&apos;s <a href="https://eslint.org/docs/latest/use/suppressions">new suppression feature</a> solved this elegantly. Run the linter, accept current errors, ignore them in future runs. <strong>New code follows new rules, legacy code gets fixed gradually.</strong> Perfect.</p><p><a href="https://biomejs.dev/">Biome</a> didn&apos;t have this feature.</p><p><strong>Traditional approach:</strong> wait for the feature, or stick with slow tooling, or commit to the multi-week refactor.</p><p><strong>AI approach:</strong> 30 minutes with Claude, working prototype.</p><p>We built <a href="https://github.com/a-c-m/biome-suppressed">biome-suppressed</a>, a wrapper that sits above Biome and provides the same suppression workflow. Tested it locally for a few weeks, fixed issues, refined the implementation. <strong>Now it&apos;s published, anyone can use it.</strong></p><p>The result: we adopted <a href="https://biomejs.dev/">Biome</a>&apos;s speed and <a href="https://www.ultracite.ai/">Ultracite</a>&apos;s aggressive rulesets <strong>without the massive refactor</strong>. New code meets high standards, legacy code doesn&apos;t block progress.</p><h3 id="git-stats-5-minutes-to-weekly-reference">Git stats: 5 minutes to weekly reference</h3><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://gist.github.com/a-c-m/e65a4ab3ced328a7b136538147c4fec0"><div class="kg-bookmark-content"><div class="kg-bookmark-title">Git stats per dev (LOC) with delta and comparison</div><div class="kg-bookmark-description">Git stats per dev (LOC) with delta and comparison. GitHub Gist: instantly share code, notes, and snippets.</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://gist.github.com/fluidicon.png" alt="AI Broke the Automation Payback Calculation"><span class="kg-bookmark-author">Gist</span><span class="kg-bookmark-publisher">262588213843476</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://github.githubassets.com/assets/gist-og-image-54fd7dc0713e.png" alt="AI Broke the Automation Payback Calculation"></div></a></figure><p>We wanted to measure AI adoption within our team. One metric: commits and lines of code changed. Yes, I know, <strong>terrible metric for quality</strong>. But for measuring AI impact on output? Actually quite useful.</p><p><strong>Traditional approach:</strong> manually run git log, parse output, track in spreadsheet, compare week-over-week.</p><p><strong>AI approach:</strong> asked an agent to write a script. Five minutes later, <a href="https://gist.github.com/a-c-m/e65a4ab3ced328a7b136538147c4fec0">working tool</a>.</p><p>The script analyzes git history, counts commits and lines changed by developer, compares to previous weeks. We use it every week. Short <strong>Ten-minute investment, ongoing value</strong>, but also deeper conversations about adoption patterns we wouldn&apos;t have had otherwise.</p><p>Whats been an added bonus, was to feed the results of this script into an AI for its own insights, as part of our weekly retrospective!</p><h3 id="custom-dorametrics-few-hours-to-ongoing-optimization">Custom DoraMetrics: few hours to ongoing optimization</h3><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://www.acmconsulting.eu/content/images/size/w1600/2025/10/Screenshot-2025-10-14-at-10.03.09.png" class="kg-image" alt="AI Broke the Automation Payback Calculation" loading="lazy"><figcaption>PR report for Ultracite, tool can also generate active branch and deployment reporting</figcaption></figure><p>We wanted to <strong>evaluate team velocity using <a href="https://en.wikipedia.org/wiki/DevOps_Research_and_Assessment">DORA</a></strong> for some quarterly reviews. Tools like <a href="https://linearb.io/">LinearB</a> exist and are great, but we needed <strong>specific customizations</strong> for our reporting needs.</p><p><strong>Traditional approach:</strong> pay for tool, export data, customize in spreadsheets, repeat quarterly.</p><p><strong>AI approach:</strong> few hours with Claude building a custom analyzer.</p><p>It analyzes git history, examines open and closed branches, generates reports with filtering, sorting, and graphing. <strong>The resulting data gave us talking points</strong> to both start optimization and monitor progress over time.</p><p>This one I haven&apos;t released publicly yet. Depending on interest, might release as a product or make available on request.</p><h2 id="the-jevons-paradox-of-tooling">The Jevons Paradox of tooling</h2><p><a href="https://en.wikipedia.org/wiki/Jevons_paradox">Jevons Paradox</a> is an economic theory that when technology improves the efficiency of resource use, overall consumption often increases rather than decreases. <strong>Greater efficiency lowers costs, leading to higher demand.</strong></p><p>The same thing happens with custom tooling.</p><p>When building tools becomes cheaper, you build more tools. But it&apos;s not just quantity&#x2014;<strong>the tools unlock workflows you didn&apos;t anticipate.</strong></p><p>The git stats tool wasn&apos;t just about measurement. <strong>It changed the conversations</strong> we had about AI adoption. Having weekly data visible shifted discussions from &quot;are we using AI?&quot; to &quot;why did velocity spike here?&quot; and &quot;what patterns correlate with impact?&quot;</p><blockquote>Data visualization that was &quot;too expensive&quot; becomes standard. Custom dashboards appear for team-specific needs. The tool&apos;s existence creates new opportunities.</blockquote><h2 id="the-team-structure-question">The team structure question</h2><p>Not everyone needs to shift their mindset to tool-making. <strong>But someone should be asking the question.</strong></p><p>Here&apos;s what I&apos;m seeing: <strong>managers are doing software development again.</strong> AI coding agents lowered the barrier enough that engineering managers&#x2014;who often haven&apos;t written production code in years&#x2014;are building tools for their teams.</p><p>They&apos;re actually the perfect candidates for this. <strong>They have the broader scope.</strong> They see workflow friction across multiple developers. They understand team-wide pain points. When they invest 30 minutes building a tool, it often applies to 5-10 people, not just themselves.</p><p>The multiplication effect here is substantial. A manager who understands <strong>both the team&apos;s needs and has the technical ability</strong> to quickly prototype solutions can have outsized impact. They&apos;re not necessarily writing production features, but they&apos;re building the tooling that makes their team more effective.</p><p>Someone asks: <strong>&quot;Can I make solving this problem easier now and in the future?&quot;</strong> instead of just &quot;How do I solve this problem now?&quot;</p><p><strong>The multiplication effect compounds.</strong> A 30-minute investment in <a href="https://github.com/a-c-m/biome-suppressed">biome-suppressed</a> unblocked weeks of potential linting migration work across multiple projects. A 5-minute git stats script influenced quarterly planning discussions. The benefits cascade.</p><h2 id="try-this-next">Try this next</h2><p><strong>Pick one workflow annoyance</strong> this week:</p><!--kg-card-begin: markdown--><ul>
 <li>Something you do repeatedly</li>
 <li>Something that frustrates you</li>
 <li>Something manual that feels &quot;not worth automating&quot;</li>
 </ul>
-<!--kg-card-end: markdown--><p>Spend 30 minutes with an AI agent, to <strong>build a tool to solve it</strong>.</p><p>Then <strong>track two things</strong>:</p><!--kg-card-begin: markdown--><ol>
+<!--kg-card-end: markdown--><p>Spend 30 minutes with an AI agent <strong>building a tool to solve it</strong>.</p><p>Then<strong> track two things</strong>:</p><!--kg-card-begin: markdown--><ol>
 <li>Did you use it again?</li>
 <li>Did it unlock something unexpected?</li>
 </ol>
 <!--kg-card-end: markdown--><p><strong>My bet: both answers are yes.</strong> And even if its not, you&apos;ve only invested an hour or two, not weeks in the learning.</p><p>---</p><h2 id="appendix-xkcd-1205-for-shorter-timeframes">Appendix: XKCD 1205 for shorter timeframes</h2><p>I&apos;ve always wanted to know what these payback periods looked like for 1-year and 2-year windows, but never had the time to calculate them. Ironically, AI helped me create these very quickly, and I&apos;ll now have this as a reference for all the future times I bring up this particular XKCD.</p><h3 id="2-year-payback-period">2-Year Payback Period</h3><!--kg-card-begin: markdown--><table>
 <thead>
 <tr>
-<th>How often you do the task</th>
-<th>1 second</th>
-<th>5 seconds</th>
-<th>30 seconds</th>
-<th>1 minute</th>
-<th>5 minutes</th>
-<th>30 minutes</th>
-<th>1 hour</th>
-<th>6 hours</th>
-<th>1 day</th>
+<th>Fequency vs Time saved per task</th>
+<th>50x/day</th>
+<th>5x/day</th>
+<th>1x/day</th>
+<th>1x/week</th>
+<th>1x/month</th>
+<th>1x/year</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>50 times per day</td>
+<td>1 second</td>
 <td>10 hours</td>
-<td>2 days</td>
-<td>2 weeks</td>
-<td>3 weeks</td>
-<td>4 months</td>
-<td>2 years</td>
-<td>4 years</td>
-<td>&#x2014;</td>
-<td>&#x2014;</td>
-</tr>
-<tr>
-<td>5 times per day</td>
 <td>1 hour</td>
-<td>5 hours</td>
-<td>1 day</td>
-<td>2.5 days</td>
-<td>2 weeks</td>
-<td>2.5 months</td>
-<td>5 months</td>
-<td>2 years</td>
-<td>&#x2014;</td>
-</tr>
-<tr>
-<td>Once per day</td>
 <td>12 minutes</td>
-<td>1 hour</td>
-<td>6 hours</td>
-<td>12 hours</td>
-<td>2.5 days</td>
-<td>2 weeks</td>
-<td>1 month</td>
-<td>6 months</td>
-<td>2 years</td>
-</tr>
-<tr>
-<td>Once per week</td>
 <td>1.5 minutes</td>
-<td>9 minutes</td>
-<td>52 minutes</td>
-<td>1.5 hours</td>
-<td>8.5 hours</td>
-<td>2 days</td>
-<td>4 days</td>
-<td>3.5 weeks</td>
-<td>3 months</td>
-</tr>
-<tr>
-<td>Once per month</td>
 <td>24 seconds</td>
-<td>2 minutes</td>
-<td>12 minutes</td>
-<td>24 minutes</td>
-<td>2 hours</td>
-<td>12 hours</td>
-<td>1 day</td>
-<td>1 week</td>
-<td>1 month</td>
+<td>2 seconds</td>
 </tr>
 <tr>
-<td>Once per year</td>
-<td>2 seconds</td>
-<td>10 seconds</td>
-<td>1 minute</td>
-<td>2 minutes</td>
-<td>10 minutes</td>
+<td>5 seconds</td>
+<td>2 days</td>
+<td>5 hours</td>
 <td>1 hour</td>
-<td>2 hours</td>
+<td>9 minutes</td>
+<td>2 minutes</td>
+<td>10 seconds</td>
+</tr>
+<tr>
+<td>30 seconds</td>
+<td>2 weeks</td>
+<td>1 day</td>
+<td>6 hours</td>
+<td>52 minutes</td>
+<td>12 minutes</td>
+<td>1 minute</td>
+</tr>
+<tr>
+<td>1 minute</td>
+<td>3 weeks</td>
+<td>2.5 days</td>
 <td>12 hours</td>
+<td>1.5 hours</td>
+<td>24 minutes</td>
+<td>2 minutes</td>
+</tr>
+<tr>
+<td>5 minutes</td>
+<td>4 months</td>
+<td>2 weeks</td>
+<td>2.5 days</td>
+<td>8.5 hours</td>
+<td>2 hours</td>
+<td>10 minutes</td>
+</tr>
+<tr>
+<td>30 minutes</td>
+<td>2 years</td>
+<td>2.5 months</td>
+<td>2 weeks</td>
+<td>2 days</td>
+<td>12 hours</td>
+<td>1 hour</td>
+</tr>
+<tr>
+<td>1 hour</td>
+<td>4 years</td>
+<td>5 months</td>
+<td>1 month</td>
+<td>4 days</td>
+<td>1 day</td>
+<td>2 hours</td>
+</tr>
+<tr>
+<td>6 hours</td>
+<td>&#x2014;</td>
+<td>2 years</td>
+<td>6 months</td>
+<td>3.5 weeks</td>
+<td>1 week</td>
+<td>12 hours</td>
+</tr>
+<tr>
+<td>1 day</td>
+<td>&#x2014;</td>
+<td>&#x2014;</td>
+<td>2 years</td>
+<td>3 months</td>
+<td>1 month</td>
 <td>2 days</td>
 </tr>
 </tbody>
@@ -107,89 +117,95 @@
 <!--kg-card-end: markdown--><h3 id="1-year-payback-period">1-Year Payback Period</h3><!--kg-card-begin: markdown--><table>
 <thead>
 <tr>
-<th>How often you do the task</th>
-<th>1 second</th>
-<th>5 seconds</th>
-<th>30 seconds</th>
-<th>1 minute</th>
-<th>5 minutes</th>
-<th>30 minutes</th>
-<th>1 hour</th>
-<th>6 hours</th>
-<th>1 day</th>
+<th>Fequency vs Time saved per task</th>
+<th>50x/day</th>
+<th>5x/day</th>
+<th>1x/day</th>
+<th>1x/week</th>
+<th>1x/month</th>
+<th>1x/year</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>50 times per day</td>
-<td>5 hours</td>
-<td>1 day</td>
-<td>1 week</td>
-<td>1.5 weeks</td>
-<td>2 months</td>
-<td>1 year</td>
-<td>2 years</td>
-<td>&#x2014;</td>
-<td>&#x2014;</td>
-</tr>
-<tr>
-<td>5 times per day</td>
-<td>30 minutes</td>
-<td>2.5 hours</td>
-<td>15 hours</td>
-<td>1 day</td>
-<td>1 week</td>
-<td>1 month</td>
-<td>2.5 months</td>
-<td>1 year</td>
-<td>&#x2014;</td>
-</tr>
-<tr>
-<td>Once per day</td>
-<td>6 minutes</td>
-<td>30 minutes</td>
-<td>3 hours</td>
-<td>6 hours</td>
-<td>1 day</td>
-<td>1 week</td>
-<td>2 weeks</td>
-<td>3 months</td>
-<td>1 year</td>
-</tr>
-<tr>
-<td>Once per week</td>
-<td>52 seconds</td>
-<td>4.5 minutes</td>
-<td>26 minutes</td>
-<td>52 minutes</td>
-<td>4.5 hours</td>
-<td>1 day</td>
-<td>2 days</td>
-<td>1.5 weeks</td>
-<td>7 weeks</td>
-</tr>
-<tr>
-<td>Once per month</td>
-<td>12 seconds</td>
-<td>1 minute</td>
-<td>6 minutes</td>
-<td>12 minutes</td>
-<td>1 hour</td>
-<td>6 hours</td>
-<td>12 hours</td>
-<td>3 days</td>
-<td>2 weeks</td>
-</tr>
-<tr>
-<td>Once per year</td>
 <td>1 second</td>
-<td>5 seconds</td>
-<td>30 seconds</td>
-<td>1 minute</td>
-<td>5 minutes</td>
+<td>5 hours</td>
 <td>30 minutes</td>
-<td>1 hour</td>
+<td>6 minutes</td>
+<td>52 seconds</td>
+<td>12 seconds</td>
+<td>1 second</td>
+</tr>
+<tr>
+<td>5 seconds</td>
+<td>1 day</td>
+<td>2.5 hours</td>
+<td>30 minutes</td>
+<td>4.5 minutes</td>
+<td>1 minute</td>
+<td>5 seconds</td>
+</tr>
+<tr>
+<td>30 seconds</td>
+<td>1 week</td>
+<td>15 hours</td>
+<td>3 hours</td>
+<td>26 minutes</td>
+<td>6 minutes</td>
+<td>30 seconds</td>
+</tr>
+<tr>
+<td>1 minute</td>
+<td>1.5 weeks</td>
+<td>1 day</td>
 <td>6 hours</td>
+<td>52 minutes</td>
+<td>12 minutes</td>
+<td>1 minute</td>
+</tr>
+<tr>
+<td>5 minutes</td>
+<td>2 months</td>
+<td>1 week</td>
+<td>1 day</td>
+<td>4.5 hours</td>
+<td>1 hour</td>
+<td>5 minutes</td>
+</tr>
+<tr>
+<td>30 minutes</td>
+<td>1 year</td>
+<td>1 month</td>
+<td>1 week</td>
+<td>1 day</td>
+<td>6 hours</td>
+<td>30 minutes</td>
+</tr>
+<tr>
+<td>1 hour</td>
+<td>2 years</td>
+<td>2.5 months</td>
+<td>2 weeks</td>
+<td>2 days</td>
+<td>12 hours</td>
+<td>1 hour</td>
+</tr>
+<tr>
+<td>6 hours</td>
+<td>&#x2014;</td>
+<td>1 year</td>
+<td>3 months</td>
+<td>1.5 weeks</td>
+<td>3 days</td>
+<td>6 hours</td>
+</tr>
+<tr>
+<td>1 day</td>
+<td>&#x2014;</td>
+<td>&#x2014;</td>
+<td>1 year</td>
+<td>7 weeks</td>
+<td>2 weeks</td>
 <td>1 day</td>
 </tr>
 </tbody>
