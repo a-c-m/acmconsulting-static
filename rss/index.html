@@ -1,4 +1,537 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[acmConsulting]]></title><description><![CDATA[The blog, posts and ramblings of Alex McFadyen (a_c_m)]]></description><link>https://www.acmconsulting.eu/</link><image><url>https://www.acmconsulting.eu/favicon.png</url><title>acmConsulting</title><link>https://www.acmconsulting.eu/</link></image><generator>Ghost 4.47</generator><lastBuildDate>Mon, 13 Apr 2026 10:09:22 GMT</lastBuildDate><atom:link href="https://www.acmconsulting.eu/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Do little things well]]></title><description><![CDATA[Marco Pierre White, Colin Powell and Vincent Van Gogh all agree on one thing. And it's worth remembering in the age of rampant complexity and AI.]]></description><link>https://www.acmconsulting.eu/post/do-little-things-well/</link><guid isPermaLink="false">69dcbc3ede9a56442fc487ff</guid><category><![CDATA[productivity]]></category><category><![CDATA[developer-experience]]></category><category><![CDATA[macos]]></category><dc:creator><![CDATA[Alex McFadyen]]></dc:creator><pubDate>Mon, 13 Apr 2026 09:56:51 GMT</pubDate><media:content url="https://www.acmconsulting.eu/content/images/2026/04/ChatGPT-Image-Apr-13--2026--11_05_48-AM.png" medium="image"/><content:encoded><![CDATA[<img src="https://www.acmconsulting.eu/content/images/2026/04/ChatGPT-Image-Apr-13--2026--11_05_48-AM.png" alt="Do little things well"><p>If you want to <strong>do something BIG</strong>, its important you<strong> start by doing something little</strong>, and do it well. </p><!--kg-card-begin: markdown--><ul>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[acmConsulting]]></title><description><![CDATA[The blog, posts and ramblings of Alex McFadyen (a_c_m)]]></description><link>https://www.acmconsulting.eu/</link><image><url>https://www.acmconsulting.eu/favicon.png</url><title>acmConsulting</title><link>https://www.acmconsulting.eu/</link></image><generator>Ghost 4.47</generator><lastBuildDate>Sat, 06 Jun 2026 17:59:10 GMT</lastBuildDate><atom:link href="https://www.acmconsulting.eu/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[From VS Code (and friends) to Zed]]></title><description><![CDATA[A practical migration guide. What to install, configure, and expect. Covers extensions, settings, git, AI agents, and keyboard shortcuts.]]></description><link>https://www.acmconsulting.eu/post/from-vs-code-and-friends-to-zed/</link><guid isPermaLink="false">6a245749a01e24387fb4a273</guid><category><![CDATA[zed]]></category><category><![CDATA[vscode]]></category><category><![CDATA[editors]]></category><category><![CDATA[developer-tools]]></category><dc:creator><![CDATA[Alex McFadyen]]></dc:creator><pubDate>Sat, 06 Jun 2026 17:46:45 GMT</pubDate><media:content url="https://www.acmconsulting.eu/content/images/2026/06/ChatGPT-Image-Jun-6--2026--06_48_00-PM.png" medium="image"/><content:encoded><![CDATA[<h2 id="but-why">But why?</h2><img src="https://www.acmconsulting.eu/content/images/2026/06/ChatGPT-Image-Jun-6--2026--06_48_00-PM.png" alt="From VS Code (and friends) to Zed"><p>Have you seen the news lately? VSCode is becoming a bit of a liability.</p><!--kg-card-begin: markdown--><ol>
+<li><a href="https://www.bleepingcomputer.com/news/security/github-confirms-breach-of-3-800-repos-via-malicious-vscode-extension/">GitHub breached via poisoned Nx Console extension (May 2026)</a></li>
+<li><a href="https://thehackernews.com/2026/01/malicious-vs-code-ai-extensions-with-15.html">MaliciousCorgi &#x2014; fake AI assistants stealing source code (January 2026)</a></li>
+<li><a href="https://visualstudiomagazine.com/articles/2025/12/08/threat-actors-keep-weaponizing-vs-code-extensions.aspx">Shai-Hulud 2.0 worm &#x2014; AsyncAPI compromise (November 2025)</a></li>
+<li><a href="https://hunt.io/blog/malicious-vscode-extension-anivia-octorat-attack-chain">Prettier impersonation &#x2192; Anivia loader &#x2192; OctoRAT (November 2025)</a></li>
+<li><a href="https://www.darkreading.com/application-security/fresh-glassworm-vs-code-extensions-supply-chain">GlassWorm self-propagating campaign (October 2025 &#x2013; April 2026)</a></li>
+<li><a href="https://www.wiz.io/blog/supply-chain-risk-in-vscode-extension-marketplaces">550+ secrets leaked across 500+ extensions (October 2025)</a></li>
+</ol>
+<!--kg-card-end: markdown--><p>... and on and on.</p><p>One of <strong>the best things about VScode</strong>, the power, flexibility, breadth and depth of its plugins, is now one of its <strong>biggest weaknesses</strong>.</p><p>Similarly, the <strong>electron base</strong> that made it cross platform and easy to run, is kinda... <strong>big and slow</strong>.</p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://www.xda-developers.com/zed-speed-makes-vs-code-antigravity-sluggish/"><div class="kg-bookmark-content"><div class="kg-bookmark-title">Zed is the speed demon that makes VS Code and Antigravity feel sluggish</div><div class="kg-bookmark-description">A new and faster code editor emerges</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://www.xda-developers.com/public/build/images/favicon-240x240.png" alt="From VS Code (and friends) to Zed"><span class="kg-bookmark-author">XDA</span><span class="kg-bookmark-publisher">Anurag Singh</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/10/why-use-zed-instead-of-vs-code.jpg?w=1600&amp;h=900&amp;fit=crop" alt="From VS Code (and friends) to Zed"></div></a></figure><p><strong>I&apos;ve tried to move to Zed a few times</strong>, but the final nail was my VSCode flavor of choice (Windsurf) finally going &quot;full AI&quot;, and becoming Devin Desktop.</p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://devin.ai/blog/windsurf-is-now-devin-desktop/"><div class="kg-bookmark-content"><div class="kg-bookmark-title">Windsurf is now Devin Desktop</div><div class="kg-bookmark-description">The next generation of Windsurf: a full IDE with the Agent Command Center built in for managing fleets of local and cloud agents from one surface.</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://devin.ai/icon.png" alt="From VS Code (and friends) to Zed"><span class="kg-bookmark-author">Ramp logo</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://devin.ai/images/blog/devin-desktop/cover.jpg" alt="From VS Code (and friends) to Zed"></div></a></figure><p>That was the final push I needed.</p><h2 id="shut-up-and-setup-my-zed">Shut up and setup my Zed</h2><p>Okay, okay. Fork this and run <code>install.sh</code>:</p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://github.com/a-c-m/my-zed-config"><div class="kg-bookmark-content"><div class="kg-bookmark-title">GitHub - a-c-m/my-zed-config: Like the title says, my Zed config.</div><div class="kg-bookmark-description">Like the title says, my Zed config. Contribute to a-c-m/my-zed-config development by creating an account on GitHub.</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://github.com/fluidicon.png" alt="From VS Code (and friends) to Zed"><span class="kg-bookmark-author">GitHub</span><span class="kg-bookmark-publisher">a-c-m</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://opengraph.githubassets.com/3a6cf2ddf70a9c6821652ee82dd6a69b97e895f1bfd5e750954dc6360c395cfb/a-c-m/my-zed-config" alt="From VS Code (and friends) to Zed"></div></a></figure><p>It <strong>symlinks the config files</strong> into <code>~/.config/zed/</code> and installs Zed and JetBrains Mono Font via Homebrew. </p><p>Because it symlinks (not copies), any changes you make in Zed show up as git diffs in the repo for you to keep, discard the rest as needed. Your config is version-controlled as you go.</p><p>Otherwise, here it is in a bit more detail.</p><hr><h2 id="1-install">1. Install</h2><p><strong>Direct download (recommended)</strong> &#x2192; <a href="https://zed.dev/download">zed.dev/download</a> </p><p><strong>Homebrew (Mac)</strong></p><pre><code>brew install --cask zed</code></pre><p><strong>CLI tool</strong> (optional, but recomended) open projects from terminal:</p><pre><code># Command Palette &#x2192; &quot;zed: install CLI&quot;
+zed .          # open current folder
+zed file.ts    # open a file</code></pre><blockquote><strong>Stable vs Preview:</strong> Stable is fine for daily use. Preview gets features ~1 week earlier but ships more bugs. You can install both and switch.</blockquote><h2 id="2-first-run-set-your-keymap">2. First-run: set your keymap</h2><p>The single most important setting. Add to <code>~/.config/zed/settings.json</code>:</p><pre><code>{
+  &quot;base_keymap&quot;: &quot;VSCode&quot;
+}</code></pre><p>This gets you ~80% of muscle memory working immediately. E.g.<br><code>&#x2318;P</code> (file picker), <br><code>&#x2318;&#x21E7;P</code> (command palette), <br><code>&#x2318;D</code> (multi-select), <br><code>&#x2318;` </code> (terminal). <br>The remaining gaps are covered in the shortcuts section below.</p><p>Other options: <code>&quot;JetBrains&quot;</code>, <code>&quot;Atom&quot;</code>, <code>&quot;Emacs&quot;</code>, <code>&quot;SublimeText&quot;</code>, <code>&quot;TextMate&quot;</code>.</p><h2 id="3-extensions-install-these-first">3. Extensions. Install these first</h2><p>Open extensions: <code>&#x2318;&#x21E7;X</code> or Command Palette &#x2192; <code>zed: extensions</code></p><!--kg-card-begin: markdown--><table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>What it does</th>
+<th>Replaces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Codebook</strong></td>
+<td>Spell checker that understands camelCase and code identifiers</td>
+<td>Code Spell Checker</td>
+</tr>
+<tr>
+<td><strong>Typos</strong></td>
+<td>Low-noise typo detection in identifiers, very few false positives</td>
+<td>(no VS Code equivalent)</td>
+</tr>
+<tr>
+<td><strong>Colored Zed Icons Theme</strong></td>
+<td>The default Zed file icons, but coloured, makes the file tree much easier to scan</td>
+<td>File icon themes in VS Code</td>
+</tr>
+<tr>
+<td><strong>Biome</strong></td>
+<td>Fast linter + formatter for JS/TS/JSON (replaces ESLint + Prettier)</td>
+<td>ESLint, Prettier</td>
+</tr>
+</tbody>
+</table>
+<!--kg-card-end: markdown--><blockquote><strong>Skip the manual step:</strong> If you fork <a href="https://github.com/a-c-m/my-zed-config">my-zed-config</a>, Codebook, Biome, and Colored Zed Icons Theme are listed under `auto_install_extensions`. Makes Zed install them automatically on first launch.</blockquote><blockquote><strong>On extension security:</strong> Zed extensions are compiled to WebAssembly with a restricted API surface. They cannot run arbitrary host processes the way VS Code extensions can. A meaningful security improvement over the VS Code extension model, which has seen a wave of supply-chain attacks in 2025&#x2013;2026.</blockquote><h2 id="4-themes">4. Themes</h2><p>Switch themes live with <code>&#x2318;K &#x2318;T</code>, arrow keys preview in real time, Enter saves.</p><p><strong>Built-in themes are decent (no install needed):</strong></p><!--kg-card-begin: markdown--><ul>
+<li><code>One Dark</code> / <code>One Light</code> are good defaults, most people stick with these</li>
+<li><code>Gruvbox Dark</code> / <code>Gruvbox Light</code> / <code>Gruvbox Dark Hard</code></li>
+<li><code>Ayu Dark</code> / <code>Ayu Light</code> / <code>Ayu Mirage</code></li>
+</ul>
+<!--kg-card-end: markdown--><p>More themes available via <code>&#x2318;&#x21E7;X</code> and at <a href="https://zed-themes.com">zed-themes.com</a>.</p><p><strong>Icon themes:</strong> Zed supports icon themes separately from colour themes. <strong>Colored Zed Icons Theme</strong> is the most popular. File icons are nice, colours are better.<br>Install from <code>&#x2318;&#x21E7;X</code> and activate via Command Palette &#x2192; <code>theme selector: toggle icons</code>.</p><p><strong>Per-project theming:</strong> No Peacock (sadly). But you can set <code>&quot;theme&quot;</code> in <code>.zed/settings.json</code> at the repo root.</p><blockquote><strong>Markdown tip:</strong> theme choice significantly affects Markdown legibility. `Gruvbox Dark Hard` and `Ayu Dark` give the most visual distinction between headings, body text, and inline code. If Markdown looks flat, try switching theme before reaching for settings overrides.</blockquote><h2 id="5-font">5. Font</h2><p>A good coding font makes a real difference. Some options:</p><!--kg-card-begin: markdown--><table>
+<thead>
+<tr>
+<th>Font</th>
+<th>Price</th>
+<th>Character</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.jetbrains.com/mono/">JetBrains Mono</a></td>
+<td>Free</td>
+<td>Best all-rounder, 143 ligatures, excellent on Retina</td>
+</tr>
+<tr>
+<td><a href="https://vercel.com/font">Geist Mono</a></td>
+<td>Free</td>
+<td>Minimal, clean, no ligatures, &quot;invisible&quot; font</td>
+</tr>
+<tr>
+<td><a href="https://berkeleygraphics.com/typefaces/berkeley-mono/">Berkeley Mono</a></td>
+<td>$75 one-time</td>
+<td>Premium craftsmanship, worth it if you live in an editor</td>
+</tr>
+</tbody>
+</table>
+<!--kg-card-end: markdown--><p>After installing, add to settings:</p><pre><code>{
+  &quot;buffer_font_family&quot;: &quot;JetBrains Mono&quot;,
+  &quot;buffer_font_size&quot;: 14,
+  &quot;buffer_font_features&quot;: { &quot;calt&quot;: true }
+}</code></pre><h2 id="6-settings-my-recommended-base-config">6. Settings. My recommended base config</h2><p><strong>User settings:</strong> <code>~/.config/zed/settings.json</code>, open with <code>&#x2318;,</code> <strong>Project settings:</strong> <code>.zed/settings.json</code> at repo root. Auto-loaded per project, merged with user settings. Great for per-repo formatter config, language server overrides, or exclusions.</p><pre><code>{
+  &quot;base_keymap&quot;: &quot;VSCode&quot;,
+  &quot;diff_view_style&quot;: &quot;unified&quot;,
+  &quot;theme&quot;: {
+    &quot;mode&quot;: &quot;system&quot;,
+    &quot;light&quot;: &quot;One Light&quot;,
+    &quot;dark&quot;: &quot;One Dark&quot;
+  },
+  &quot;buffer_font_family&quot;: &quot;JetBrains Mono&quot;,
+  &quot;buffer_font_size&quot;: 14,
+  &quot;buffer_font_features&quot;: { &quot;calt&quot;: true },
+  &quot;ui_font_size&quot;: 14,
+  &quot;soft_wrap&quot;: &quot;editor_width&quot;,
+
+  &quot;git&quot;: {
+    &quot;inline_blame&quot;: { &quot;enabled&quot;: true, &quot;delay_ms&quot;: 800 }
+  },
+
+  &quot;format_on_save&quot;: &quot;on&quot;,
+  &quot;ensure_final_newline_on_save&quot;: true,
+
+  &quot;terminal&quot;: {
+    &quot;font_family&quot;: &quot;JetBrains Mono&quot;,
+    &quot;font_size&quot;: 13,
+    &quot;working_directory&quot;: &quot;current_project_directory&quot;
+  },
+
+  &quot;file_scan_exclusions&quot;: [
+    &quot;**/.git&quot;,
+    &quot;**/node_modules&quot;,
+    &quot;**/.next&quot;,
+    &quot;**/dist&quot;,
+    &quot;**/.turbo&quot;
+  ],
+
+  &quot;show_whitespaces&quot;: &quot;boundary&quot;,
+  &quot;scrollbar&quot;: { &quot;show&quot;: &quot;auto&quot; },
+  &quot;indent_guides&quot;: { &quot;enabled&quot;: true },
+
+  &quot;auto_install_extensions&quot;: {
+    &quot;colored-zed-icons-theme&quot;: true,
+    &quot;biome&quot;: true,
+    &quot;codebook&quot;: true
+  },
+
+  &quot;languages&quot;: {
+    &quot;Markdown&quot;: {
+      &quot;language_servers&quot;: [&quot;codebook&quot;],
+      &quot;soft_wrap&quot;: &quot;editor_width&quot;
+    }
+  }
+}</code></pre><p>A few things worth noting in that block:</p><!--kg-card-begin: markdown--><ul>
+<li><strong><code>&quot;theme&quot;</code> with <code>&quot;mode&quot;: &quot;system&quot;</code></strong>. Follows your OS dark/light setting automatically. Much better than hardcoding <code>&quot;One Dark&quot;</code>.</li>
+<li><strong><code>&quot;git&quot;: { &quot;inline_blame&quot;: ... }</code></strong>. <code>inline_blame</code> must live under the <code>git</code> key, not at the top level. Easy mistake, silent failure if you get it wrong.</li>
+<li><strong><code>auto_install_extensions</code></strong>. Zed installs these on first launch. No marketplace hunting needed.</li>
+</ul>
+<!--kg-card-end: markdown--><h3 id="example-biome-linting-formatting">Example: Biome (linting + formatting)</h3><p>If you use <a href="https://biomejs.dev">Biome</a> for linting and formatting, configure it per-language rather than globally (to avoid it interfering with languages it doesn&apos;t support):</p><pre><code>{
+  &quot;languages&quot;: {
+    &quot;TypeScript&quot;: {
+      &quot;language_servers&quot;: [&quot;biome&quot;, &quot;!vtsls&quot;, &quot;!typescript-language-server&quot;],
+      &quot;formatter&quot;: { &quot;language_server&quot;: { &quot;name&quot;: &quot;biome&quot; } },
+      &quot;code_actions_on_format&quot;: {
+        &quot;source.fixAll.biome&quot;: true,
+        &quot;source.organizeImports.biome&quot;: true
+      }
+    },
+    &quot;TSX&quot;: {
+      &quot;language_servers&quot;: [&quot;biome&quot;, &quot;!vtsls&quot;],
+      &quot;formatter&quot;: { &quot;language_server&quot;: { &quot;name&quot;: &quot;biome&quot; } },
+      &quot;code_actions_on_format&quot;: {
+        &quot;source.fixAll.biome&quot;: true,
+        &quot;source.organizeImports.biome&quot;: true
+      }
+    },
+    &quot;JavaScript&quot;: {
+      &quot;language_servers&quot;: [&quot;biome&quot;, &quot;!vtsls&quot;],
+      &quot;formatter&quot;: { &quot;language_server&quot;: { &quot;name&quot;: &quot;biome&quot; } },
+      &quot;code_actions_on_format&quot;: {
+        &quot;source.fixAll.biome&quot;: true,
+        &quot;source.organizeImports.biome&quot;: true
+      }
+    },
+    &quot;JSON&quot;: {
+      &quot;language_servers&quot;: [&quot;biome&quot;],
+      &quot;formatter&quot;: { &quot;language_server&quot;: { &quot;name&quot;: &quot;biome&quot; } }
+    }
+  }
+}</code></pre><blockquote><strong>Don&apos;t forget TSX.</strong> Zed treats `TypeScript` and `TSX` as separate languages. If you only configure `TypeScript`, your `.tsx` files still get formatted by vtsls. Both need the Biome override.</blockquote><p>Requires Biome v2+. Full setup guide: <a href="https://biomejs.dev/reference/zed/">biomejs.dev/reference/zed</a></p><h3 id="typescript-inlay-hints-vtsls">TypeScript inlay hints (vtsls)</h3><p>If you&apos;re using vtsls (the default TypeScript server), it&apos;s worth enabling inlay hints. They show parameter names and return types inline, without hovering:</p><pre><code>{
+  &quot;lsp&quot;: {
+    &quot;vtsls&quot;: {
+      &quot;settings&quot;: {
+        &quot;typescript&quot;: {
+          &quot;inlayHints&quot;: {
+            &quot;parameterNames&quot;: { &quot;enabled&quot;: &quot;literals&quot; },
+            &quot;returnTypes&quot;: { &quot;enabled&quot;: true }
+          },
+          &quot;tsserver&quot;: {
+            &quot;maxTsServerMemory&quot;: 8192
+          }
+        }
+      }
+    }
+  }
+}</code></pre><p><code>&quot;literals&quot;</code> shows parameter names only when the argument is a literal value (string, number, boolean). Low noise, high signal. <code>maxTsServerMemory</code> is worth bumping on large monorepos; the default is 3072MB.</p><h2 id="7-git-integration">7. Git integration</h2><p>This is where Zed stands out from most editors.</p><p><strong>Git panel:</strong> <code>&#x2303;G</code> shows all changed files with status indicators, staged/unstaged sections, and a commit message box.</p><p><strong>Project diff:</strong> <code>&#x2318;&#x21E7;D</code> opens every changed file in a single split-diff multibuffer (like a github PR). You can edit directly in the diff, stage individual hunks with a click, and navigate across file boundaries without switching tabs. This is the closest equivalent to Windsurf/Cursor&apos;s diff review flow.</p><p><strong>Split vs unified diff:</strong> Zed ships with split diff as default; I prefer unified, easy to set <code>&quot;diff_view_style&quot;: &quot;unified&quot;</code> in settings, or toggle on the fly with Command Palette &#x2192; <code>diff: toggle split diff</code>.</p><p><strong>Git graph:</strong> Command Palette &#x2192; <code>git: graph</code> for a lazy-loading, searchable commit history with a commit info panel.</p><p><strong>Inline blame:</strong> Shows on the current line after a short delay. Toggle with <code>&#x2318;K &#x2318;I</code>.</p><p><strong>Branch switching:</strong> <code>&#x2318;K &#x2318;B</code> or Command Palette &#x2192; <code>git: switch</code></p><p><strong>Worktrees:</strong> Supported natively. Command Palette &#x2192; <code>git: create worktree</code>. Each worktree gets its own project panel context.</p><p><strong>Multiple repos in one window:</strong> Zed&apos;s git panel doesn&apos;t fully support workspaces with multiple git repositories yet (<a href="https://github.com/zed-industries/zed/discussions/52191">#52191</a>). The workaround: use Command Palette &#x2192; <code>project: add folder to project</code> for each sub-repo. They appear in the file tree, and you can select between them in the git panel tab, not perfect, but functional.</p><p><strong>Docs:</strong> <a href="https://zed.dev/docs/git">zed.dev/docs/git</a></p><h2 id="8-ai-agents-claude-code-opencode-and-zeds-built-in-agent">8. AI agents. Claude Code, OpenCode, and Zed&apos;s built-in agent</h2><p>Zed runs external agents via <strong>ACP (Agent Client Protocol). </strong>It works well, where agent runs as an independent process with its own thread. You can run multiple agents simultaneously on different tasks.</p><p><strong>Open the Agent Panel:</strong> <code>&#x2318;?</code></p><p><strong>Panel layout:</strong> Zed&apos;s default puts the agent panel and threads on the left, project/git panel on the right. Right-click any panel icon in the status bar to move it. Or set in settings:</p><pre><code>{
+  &quot;agent&quot;: {
+    &quot;dock&quot;: &quot;right&quot;,
+    &quot;play_sound_when_agent_done&quot;: &quot;always&quot;
+  }
+}</code></pre><p><code>&quot;play_sound_when_agent_done&quot;: &quot;always&quot;</code> is surprisingly handy. Pings you to come back when it&apos;s done. </p><p>You can also wire up both agents via settings, so they&apos;re available immediately after forking and installing:</p><pre><code>{
+  &quot;agent_servers&quot;: {
+    &quot;opencode&quot;: { &quot;type&quot;: &quot;registry&quot; },
+    &quot;claude-acp&quot;: {
+      &quot;type&quot;: &quot;registry&quot;,
+      &quot;default_config_options&quot;: {
+        &quot;mode&quot;: &quot;acceptEdits&quot;,
+        &quot;model&quot;: &quot;sonnet&quot;
+      }
+    }
+  }
+}</code></pre><p><code>acceptEdits</code> means Claude Code auto-accepts its own edits without a confirmation step on every file, swap to plan mode if you want no edits. <code>&quot;model&quot;: &quot;sonnet&quot;</code> keeps costs reasonable; switch to <code>&quot;opus&quot;</code> with <code>/model</code> as needed, I find sonnet to be enough most of the time.</p><h3 id="claude-code-via-acp">Claude Code (via ACP)</h3><pre><code>Command Palette &#x2192; &quot;acp: open registry&quot; &#x2192; claude-acp &#x2192; Install
+Agent Panel &#x2192; + &#x2192; claude-acp &#x2192; /login (first time)</code></pre><p><code>CLAUDE.md</code> files in your repo are picked up automatically. Billing goes through your Anthropic account.</p><p>&#x2192; <a href="https://zed.dev/acp/agent/claude-agent">zed.dev/acp/agent/claude-agent</a></p><h3 id="opencode-via-acp">OpenCode (via ACP)</h3><pre><code>Command Palette &#x2192; &quot;acp: open registry&quot; &#x2192; OpenCode &#x2192; Install
+Agent Panel &#x2192; + &#x2192; OpenCode</code></pre><p>OpenCode manages its own auth and model selection and supports 75+ LLM providers. Can also run as a raw TUI in the integrated terminal.</p><p>&#x2192; <a href="https://zed.dev/acp/agent/opencode">zed.dev/acp/agent/opencode</a></p><h3 id="reviewing-agent-diffs">Reviewing agent diffs</h3><p>When an agent makes changes, Zed shows them in the same editable multibuffer diff view as git. You can accept/reject individual hunks inline, or edit the diff directly before accepting.</p><h3 id="zeds-built-in-agent">Zed&apos;s built-in agent</h3><p>Zed has a first-party agent (your choice of model: Claude, GPT, Gemini, local). Good for inline assist and quick questions.</p><!--kg-card-begin: markdown--><ul>
+<li><strong>Inline assist:</strong> <code>&#x2318;I</code> &#x2192; applies changes inline at the cursor</li>
+<li><strong>Agent thread:</strong> <code>&#x2318;?</code> &#x2192; new thread. Full conversation with file context</li>
+</ul>
+<!--kg-card-end: markdown--><p>For autonomous multi-file work, Claude Code or OpenCode via ACP are the better choice.</p><p><strong>Docs:</strong> <a href="https://zed.dev/docs/ai/external-agents">zed.dev/docs/ai/external-agents</a></p><h2 id="9-keyboard-shortcuts">9. Keyboard shortcuts</h2><h3 id="vs-code-shortcuts-that-carry-over-with-basekeymap-vscode">VS Code shortcuts that carry over (with <code>&quot;base_keymap&quot;: &quot;VSCode&quot;</code>)</h3><!--kg-card-begin: markdown--><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Command Palette</td>
+<td><code>&#x2318;&#x21E7;P</code></td>
+</tr>
+<tr>
+<td>Quick open file</td>
+<td><code>&#x2318;P</code></td>
+</tr>
+<tr>
+<td>Open settings</td>
+<td><code>&#x2318;,</code></td>
+</tr>
+<tr>
+<td>Toggle terminal</td>
+<td><code>&#x2318;`</code></td>
+</tr>
+<tr>
+<td>Go to definition</td>
+<td><code>F12</code></td>
+</tr>
+<tr>
+<td>Peek definition</td>
+<td><code>&#x2325;F12</code></td>
+</tr>
+<tr>
+<td>Find in files</td>
+<td><code>&#x2318;&#x21E7;F</code></td>
+</tr>
+<tr>
+<td>Multi-cursor select next</td>
+<td><code>&#x2318;D</code></td>
+</tr>
+<tr>
+<td>Move line up/down</td>
+<td><code>&#x2325;&#x2191;</code> / <code>&#x2325;&#x2193;</code></td>
+</tr>
+<tr>
+<td>Duplicate line</td>
+<td><code>&#x2325;&#x21E7;&#x2193;</code></td>
+</tr>
+<tr>
+<td>Delete line</td>
+<td><code>&#x2318;&#x21E7;K</code></td>
+</tr>
+<tr>
+<td>Toggle comment</td>
+<td><code>&#x2318;/</code></td>
+</tr>
+<tr>
+<td>Format document</td>
+<td><code>&#x2325;&#x21E7;F</code></td>
+</tr>
+<tr>
+<td>Rename symbol</td>
+<td><code>F2</code></td>
+</tr>
+<tr>
+<td>Close tab</td>
+<td><code>&#x2318;W</code></td>
+</tr>
+</tbody>
+</table>
+<!--kg-card-end: markdown--><h3 id="zed-specific-shortcuts-to-learn">Zed-specific shortcuts to learn</h3><!--kg-card-begin: markdown--><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open git panel</td>
+<td><code>&#x2303;G</code></td>
+</tr>
+<tr>
+<td>Project diff (all changes)</td>
+<td><code>&#x2318;&#x21E7;D</code></td>
+</tr>
+<tr>
+<td>Toggle inline blame</td>
+<td><code>&#x2318;K &#x2318;I</code></td>
+</tr>
+<tr>
+<td>Switch theme</td>
+<td><code>&#x2318;K &#x2318;T</code></td>
+</tr>
+<tr>
+<td>Open agent panel</td>
+<td><code>&#x2318;?</code></td>
+</tr>
+<tr>
+<td>Inline AI assist</td>
+<td><code>&#x2318;I</code></td>
+</tr>
+<tr>
+<td>Open extensions</td>
+<td><code>&#x2318;&#x21E7;X</code></td>
+</tr>
+<tr>
+<td>Open keymap editor</td>
+<td><code>&#x2318;K &#x2318;S</code></td>
+</tr>
+<tr>
+<td>Toggle project panel</td>
+<td><code>&#x2318;B</code></td>
+</tr>
+<tr>
+<td>Split editor right</td>
+<td><code>&#x2318;K &#x2318;&#x2192;</code></td>
+</tr>
+<tr>
+<td>Open recent projects</td>
+<td><code>&#x2318;&#x2325;O</code></td>
+</tr>
+<tr>
+<td>Toggle word wrap</td>
+<td><code>&#x2325;Z</code></td>
+</tr>
+<tr>
+<td>Open Markdown preview</td>
+<td><code>&#x2318;&#x21E7;P</code> (in a .md file)</td>
+</tr>
+</tbody>
+</table>
+<!--kg-card-end: markdown--><h3 id="shortcuts-that-changed">Shortcuts that changed</h3><!--kg-card-begin: markdown--><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>VS Code</th>
+<th>Zed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open recent</td>
+<td><code>&#x2303;R</code></td>
+<td><code>&#x2318;&#x2325;O</code></td>
+</tr>
+<tr>
+<td>Go to symbol</td>
+<td><code>&#x2318;&#x21E7;O</code></td>
+<td><code>&#x2318;&#x21E7;O</code></td>
+</tr>
+<tr>
+<td>Outline panel</td>
+<td>Explorer sidebar</td>
+<td>Command Palette &#x2192; <code>outline panel</code></td>
+</tr>
+</tbody>
+</table>
+<!--kg-card-end: markdown--><blockquote><strong>Full cheat sheet:</strong> <a href="https://cheatsheets.zip/zed">cheatsheets.zip/zed</a></blockquote><blockquote><strong>Keybindings docs:</strong> <a href="https://zed.dev/docs/key-bindings">zed.dev/docs/key-bindings</a></blockquote><blockquote><strong>Official VS Code migration guide:</strong> <a href="https://zed.dev/docs/migrate/vs-code">zed.dev/docs/migrate/vs-code</a></blockquote><h2 id="10-tips-tricks">10. Tips &amp; tricks</h2><h3 id="moving-panels">Moving panels</h3><p>Easy to miss, if you don&apos;t look for it. You can right-click any panel icon in the bottom status bar and tell it where to go. Zed writes the setting to your <code>settings.json</code> automatically. Alternatively set it manually:</p><pre><code>{
+  &quot;project_panel&quot;: { &quot;dock&quot;: &quot;left&quot; },
+  &quot;git_panel&quot;: { &quot;dock&quot;: &quot;left&quot; },
+  &quot;agent&quot;: { &quot;dock&quot;: &quot;right&quot; },
+  &quot;terminal&quot;: { &quot;dock&quot;: &quot;bottom&quot; }
+}</code></pre><h3 id="opening-files-in-an-external-app-with-a-single-keypress">Opening files in an external app with a single keypress</h3><p>Useful when you want to open a specific file type in a dedicated app. </p><p>Yes you can use markdown preview with <code>&#x2318;P</code>, but I like WYSIWYG markdown, so have setup <a href="https://typora.io/">Typora</a>. Same idea works for opening a CSV in TablePlus, or an image in Preview etc</p><p><strong>Step 1. Define the task in `~/.config/zed/tasks.json`</strong></p><pre><code>[
+  {
+    &quot;label&quot;: &quot;Open in Typora&quot;,
+    &quot;command&quot;: &quot;open -a Typora \&quot;$ZED_FILE\&quot;&quot;,
+    &quot;reveal&quot;: &quot;never&quot;,
+    &quot;allow_concurrent_runs&quot;: true
+  }
+]</code></pre><p><code>$ZED_FILE</code> is the absolute path to the currently focused file.</p><blockquote><strong>Gotcha:</strong> Put the full command in `command`, don&apos;t wrap it in `sh -c` with an `args` array. Zed already runs the command inside `zsh -i -c &apos;...&apos;`; the `args` field doesn&apos;t pass through as expected and silently does nothing.</blockquote><p><strong>Step 2. Bind a key in `~/.config/zed/keymap.json`:</strong></p><pre><code>[
+  {
+    &quot;context&quot;: &quot;Editor&quot;,
+    &quot;bindings&quot;: {
+      &quot;cmd-shift-t&quot;: [&quot;task::Spawn&quot;, { &quot;task_name&quot;: &quot;Open in Typora&quot; }]
+    }
+  }
+]</code></pre><blockquote><strong>Gotcha 1:</strong> Use `task_name`, not `task_label`. With `task_label` the task picker opens (pre-filtered but still requiring Enter). With `task_name` it runs immediately.</blockquote><blockquote><strong>Gotcha 2:</strong> Use `&quot;context&quot;: &quot;Editor&quot;`, not `&quot;Workspace&quot;`. This ensures a file is focused (so `$ZED_FILE` is populated) and avoids conflicting with Zed&apos;s default `cmd-shift-t` binding.</blockquote><p>Same pattern works for any app just change the label, app name, and key binding.</p><h3 id="markdown-heading-contrast-boostertheme-override">Markdown heading contrast booster - theme override</h3><p>If headings look too flat in your theme, you can boost specific Markdown tokens without switching theme globally:</p><pre><code>{
+  &quot;languages&quot;: {
+    &quot;Markdown&quot;: {
+      &quot;theme_overrides&quot;: {
+        &quot;syntax&quot;: {
+          &quot;title&quot;: {
+            &quot;color&quot;: &quot;#e5c07b&quot;,
+            &quot;font_weight&quot;: 700
+          },
+          &quot;emphasis.strong&quot;: {
+            &quot;font_weight&quot;: 800
+          },
+          &quot;emphasis&quot;: {
+            &quot;font_style&quot;: &quot;italic&quot;
+          }
+        }
+      }
+    }
+  }
+}</code></pre><p>Adjust `#e5c07b` to taste. `title` is the Tree-sitter token for headings.</p><h3 id="autocomplete-noise-in-markdown-files">Autocomplete noise in Markdown files</h3><p>A common frustration: Zed&apos;s autocomplete fires constantly while writing prose. Disable it for Markdown:</p><pre><code>{
+  &quot;languages&quot;: {
+    &quot;Markdown&quot;: {
+      &quot;show_completions_on_input&quot;: false
+    }
+  }
+}</code></pre><h2 id="11-things-youll-miss-workarounds">11. Things you&apos;ll miss / workarounds</h2><!--kg-card-begin: markdown--><table>
+<thead>
+<tr>
+<th>What you had</th>
+<th>Zed situation</th>
+<th>Workaround</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Peacock</strong> window tinting</td>
+<td>Not built in</td>
+<td>Set <code>&quot;theme&quot;</code> per repo in <code>.zed/settings.json</code></td>
+</tr>
+<tr>
+<td><strong>Settings Sync</strong></td>
+<td>Not in Zed yet</td>
+<td>Fork <a href="https://github.com/a-c-m/my-zed-config">my-zed-config</a> and run <code>install.sh</code>, it symlinks + git gives you version-controlled config (see section 12)</td>
+</tr>
+<tr>
+<td><strong>WYSIWYG Markdown</strong> (vscode-office / Obsidian-style)</td>
+<td>Not supported in editor</td>
+<td>Typora alongside Zed; or use the preview pane</td>
+</tr>
+<tr>
+<td><strong>Markdown PDF export</strong></td>
+<td>No built-in export</td>
+<td>Typora; or <code>pandoc</code> CLI</td>
+</tr>
+<tr>
+<td><strong>Markdown <code>&#x2318;B</code> bold shortcut</strong></td>
+<td>Not implemented</td>
+<td>Open feature request; use Typora for heavy doc editing</td>
+</tr>
+<tr>
+<td><strong>Extension marketplace breadth</strong></td>
+<td>Smaller ecosystem</td>
+<td>Most critical extensions exist; gaps closing fast</td>
+</tr>
+<tr>
+<td><strong>Multi-root git panel</strong></td>
+<td>Partial support only (<a href="https://github.com/zed-industries/zed/discussions/52191">#52191</a>)</td>
+<td><code>project: add folder to project</code> for each sub-repo, selectable in the git panel tab</td>
+</tr>
+</tbody>
+</table>
+<!--kg-card-end: markdown--><h2 id="12-useful-links">12. Useful links</h2><!--kg-card-begin: markdown--><table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Starter config (fork this)</td>
+<td><a href="https://github.com/a-c-m/my-zed-config">github.com/a-c-m/my-zed-config</a></td>
+</tr>
+<tr>
+<td>Download</td>
+<td><a href="https://zed.dev/download">zed.dev/download</a></td>
+</tr>
+<tr>
+<td>Official docs</td>
+<td><a href="https://zed.dev/docs">zed.dev/docs</a></td>
+</tr>
+<tr>
+<td>VS Code migration guide</td>
+<td><a href="https://zed.dev/docs/migrate/vs-code">zed.dev/docs/migrate/vs-code</a></td>
+</tr>
+<tr>
+<td>Extensions browser</td>
+<td><a href="https://zed.dev/extensions">zed.dev/extensions</a></td>
+</tr>
+<tr>
+<td>Theme previews</td>
+<td><a href="https://zed-themes.com">zed-themes.com</a></td>
+</tr>
+<tr>
+<td>Theme builder</td>
+<td><a href="https://zed.dev/theme-builder">zed.dev/theme-builder</a></td>
+</tr>
+<tr>
+<td>Git docs</td>
+<td><a href="https://zed.dev/docs/git">zed.dev/docs/git</a></td>
+</tr>
+<tr>
+<td>External agents (ACP)</td>
+<td><a href="https://zed.dev/docs/ai/external-agents">zed.dev/docs/ai/external-agents</a></td>
+</tr>
+<tr>
+<td>ACP registry</td>
+<td><a href="https://zed.dev/acp">zed.dev/acp</a></td>
+</tr>
+<tr>
+<td>Claude Agent</td>
+<td><a href="https://zed.dev/acp/agent/claude-agent">zed.dev/acp/agent/claude-agent</a></td>
+</tr>
+<tr>
+<td>OpenCode Agent</td>
+<td><a href="https://zed.dev/acp/agent/opencode">zed.dev/acp/agent/opencode</a></td>
+</tr>
+<tr>
+<td>Keybindings docs</td>
+<td><a href="https://zed.dev/docs/key-bindings">zed.dev/docs/key-bindings</a></td>
+</tr>
+<tr>
+<td>Keyboard cheat sheet</td>
+<td><a href="https://cheatsheets.zip/zed">cheatsheets.zip/zed</a></td>
+</tr>
+<tr>
+<td>Biome extension</td>
+<td><a href="https://zed.dev/extensions/biome">zed.dev/extensions/biome</a></td>
+</tr>
+<tr>
+<td>Biome setup guide</td>
+<td><a href="https://biomejs.dev/reference/zed/">biomejs.dev/reference/zed</a></td>
+</tr>
+<tr>
+<td>GitHub repo</td>
+<td><a href="https://github.com/zed-industries/zed">github.com/zed-industries/zed</a></td>
+</tr>
+<tr>
+<td>Multi-root git tracking issue</td>
+<td><a href="https://github.com/zed-industries/zed/discussions/52191">github.com/zed-industries/zed/discussions/52191</a></td>
+</tr>
+</tbody>
+</table>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Do little things well]]></title><description><![CDATA[Marco Pierre White, Colin Powell and Vincent Van Gogh all agree on one thing. And it's worth remembering in the age of rampant complexity and AI.]]></description><link>https://www.acmconsulting.eu/post/do-little-things-well/</link><guid isPermaLink="false">69dcbc3ede9a56442fc487ff</guid><category><![CDATA[productivity]]></category><category><![CDATA[developer-experience]]></category><category><![CDATA[macos]]></category><dc:creator><![CDATA[Alex McFadyen]]></dc:creator><pubDate>Mon, 13 Apr 2026 09:56:51 GMT</pubDate><media:content url="https://www.acmconsulting.eu/content/images/2026/04/ChatGPT-Image-Apr-13--2026--11_05_48-AM.png" medium="image"/><content:encoded><![CDATA[<img src="https://www.acmconsulting.eu/content/images/2026/04/ChatGPT-Image-Apr-13--2026--11_05_48-AM.png" alt="Do little things well"><p>If you want to <strong>do something BIG</strong>, its important you<strong> start by doing something little</strong>, and do it well. </p><!--kg-card-begin: markdown--><ul>
 <li><strong>Marco Pierre White:</strong> &quot;Perfection is lots of little things done well.&quot;</li>
 <li><strong>Colin Powell:</strong> &quot;If you are going to achieve excellence in big things, you develop the habit in little matters. Excellence is not an exception, it is a prevailing attitude.&quot;</li>
 <li><strong>Vincent Van Gogh:</strong> &quot;Great things are done by a series of small things brought together.&quot;</li>
@@ -566,4 +1099,4 @@ try {
 
 # Bad: Swallowing errors
 const user = await userService.find(id).catch(() =&gt; null);
-</code></pre><p><strong>4. Version your AI context like code</strong><br>Your <code>claude.md</code> and <code>.cursorrules</code> files should be in version control, reviewed in PRs, and updated when your architecture changes. It needs to be reviewed by your very best team members, as a bad change can be repeated 100&apos;s of times a day.</p><p><strong> 5. Have the AI help you keep things fresh</strong><br>Stale AI context can be worse than no context; it actively misleads your assistant into suggesting outdated patterns. If you find yourself correcting a mistake, ask the AI what it learned from the interaction and if it should/could update the rule/context to avoid similar pitfalls in the future.</p><p><strong><em>BONUS</em></strong>: Here is a Claude command you can use to help keep its context fresh: <a href="https://gist.github.com/a-c-m/f4cead5ca125d2eaad073dfd71efbcfc">reflection.md</a><br><br>Happy prompting. Living in the future is AWESOME. As <a href="https://en.wikiquote.org/wiki/William_Gibson">William Gibson</a> says <em><strong>&quot;The future is already here &#x2014; it&apos;s just not very evenly distributed.&quot;</strong></em> ... <strong>yet</strong>.<br><br><em>(post created with help from Claude.ai, but based on my ideas, with human editing and such).</em></p>]]></content:encoded></item><item><title><![CDATA[Social networks are killing the web]]></title><description><![CDATA[Without connections, it's just CompuServe 2.0]]></description><link>https://www.acmconsulting.eu/post/social-networks-are-killing-the-web/</link><guid isPermaLink="false">6708fbcbe7d4810863780830</guid><dc:creator><![CDATA[Alex McFadyen]]></dc:creator><pubDate>Fri, 11 Oct 2024 11:15:07 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1447856661108-b77bc4b6d984?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wxMTc3M3wwfDF8c2VhcmNofDI2fHxicm9rZW4lMjB3ZWJ8ZW58MHx8fHwxNzI4NjQzMDMxfDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=2000" medium="image"/><content:encoded><![CDATA[<img src="https://images.unsplash.com/photo-1447856661108-b77bc4b6d984?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wxMTc3M3wwfDF8c2VhcmNofDI2fHxicm9rZW4lMjB3ZWJ8ZW58MHx8fHwxNzI4NjQzMDMxfDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=2000" alt="Social networks are killing the web"><p><strong>Remember CompuServe</strong>? If you do, you probably know that it was one of the early giants of the internet era, f<strong>amous for its CD-ROMs and walled garden strategy</strong>. Like CompuServe&apos;s approach to keeping users locked into their ecosystem, today&apos;s social media platforms are attempting something similar, by punishing links.</p><p>&quot;Killing&quot; is a little hyperbolic perhaps, and the CompuServe reference will only mean something if you are of a certain age; but the point is valid. </p><h2 id="attention-retention-by-all-possible-means">Attention retention by all possible means</h2><p>These platforms want you to <strong>stay on their domain</strong>, interacting with their content and consuming their ads. For them, <strong>a link to another website represents a threat</strong>. So they punish posts containing links, in some cases outright ban them!</p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://www.oneupweb.com/blog/why-you-shouldnt-always-post-links-on-facebook/"><div class="kg-bookmark-content"><div class="kg-bookmark-title">Does Facebook Penalize Posts with Links? &#x2013; Oneupweb</div><div class="kg-bookmark-description">Monetizing social media platforms is all about keeping users on the site or app. Find out why Facebook penalizes posts with links &#x2013; and what to do about it!</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://www.oneupweb.com/wp-content/uploads/2016/08/ouw_favicon_480-300x300.png" alt="Social networks are killing the web"><span class="kg-bookmark-author">Oneupweb</span><span class="kg-bookmark-publisher">Oneupweb</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://www.oneupweb.com/wp-content/uploads/2023/08/OUW_BrandPhoto-26-scaled-e1728332904953.jpg" alt="Social networks are killing the web"></div></a></figure><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://www.socialmediatoday.com/news/twitter-implements-new-rules-banning-links-to-other-social-platforms/639047/"><div class="kg-bookmark-content"><div class="kg-bookmark-title">Twitter Implements New Rules Banning Links to Other Social Platforms</div><div class="kg-bookmark-description">Team Elon has pulled another controversial move, as they continue to re-shape the platform.</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://www.socialmediatoday.com/apple-touch-icon.png?v=2" alt="Social networks are killing the web"><span class="kg-bookmark-author">Social Media Today</span><span class="kg-bookmark-publisher">Andrew Hutchinson</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://www.socialmediatoday.com/imgproxy/pS3CnLw35jgohWVMlfz0-jR-yV-bhSyAS6iUdCfNLgw/g:ce/rs:fit:770:435/bG9jYWw6Ly8vZGl2ZWltYWdlL3R3aXR0ZXJfbG9nb19wV21NRnR2LnBuZw==.webp" alt="Social networks are killing the web"></div></a></figure><p><strong>The result</strong>? Many content creators (and even casual users), whose want to reach the largest possible audience, are<strong> forced to self-censor</strong>. Knowing that posts with links might have their reach reduced, they simply stop including them. This means fewer connections between information sources and less of the open, interconnected web that we have grown accustomed to.</p><p>Some try <strong>clever workarounds</strong>, like posting links in the comments instead of the main post. But even this tactic seems to be getting detected and punished by the algorithms. The message is clear: <strong>Links are not welcome</strong>.</p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://espirian.co.uk/linkedin-links-in-posts-or-comments/"><div class="kg-bookmark-content"><div class="kg-bookmark-title">LinkedIn links in posts or comments?</div><div class="kg-bookmark-description">Where should you put your links? Pros and cons of each method.</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://espirian.co.uk/wp-content/uploads/2023/06/cropped-favicon-32x32-1-270x270-1.webp" alt="Social networks are killing the web"><span class="kg-bookmark-author">John Espirian</span><span class="kg-bookmark-publisher">John Espirian</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://secure.gravatar.com/avatar/e09134295f2da1bc46c876dc1ccfaf64?s=96&amp;d=mm&amp;r=g" alt="Social networks are killing the web"></div></a></figure><h2 id="why-care-about-links">Why care about links?</h2><p>The World Wide Web (specifically HTTP) was built on the idea of links. </p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://en.wikipedia.org/wiki/HTTP"><div class="kg-bookmark-content"><div class="kg-bookmark-title">HTTP - Wikipedia</div><div class="kg-bookmark-description"></div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://en.wikipedia.org/static/apple-touch/wikipedia.png" alt="Social networks are killing the web"><span class="kg-bookmark-author">Wikimedia Foundation, Inc.</span><span class="kg-bookmark-publisher">Contributors to Wikimedia projects</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/HTTP_logo.svg/1200px-HTTP_logo.svg.png" alt="Social networks are killing the web"></div></a></figure><p>HTTP stands for <strong><a href="https://en.wikipedia.org/wiki/Hypertext">Hypertext</a></strong> Transfer Protocol, Hypertext is a way to link and access information of various kinds as a web of nodes - it&apos;s foundational building block of what makes the web the web. If we no longer have links to other nodes, is it still a web? Imagine Wikipedia without citations? </p><p><strong>The slow </strong>(or not so slow)<strong> death of the World Wide Web has started.</strong> &#xA0;(Sorry, more hyperbole - perhaps?)</p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://tech.slashdot.org/story/24/10/07/1938237/the-slow-death-of-the-hyperlink"><div class="kg-bookmark-content"><div class="kg-bookmark-title">The Slow Death of the Hyperlink - Slashdot</div><div class="kg-bookmark-description">The decline of journalism has been attributed to many factors, from slow adaptation to the internet to the dominance of tech giants in advertising. But a veteran journalist offers a new perspective: the death of the hyperlink could be changing the fundamental nature of the internet, with significant&#x2026;</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://tech.slashdot.org/favicon.ico" alt="Social networks are killing the web"><span class="kg-bookmark-author">Slashdot</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://a.fsdn.com/sd/topics/internet_64.png" alt="Social networks are killing the web"></div></a></figure><p>By punishing posts that link out, they are <strong>breaking the very connections that make the internet great</strong>. Combine this with the deluge of hallucinated AI content (which is then harder to fact-check without links as supporting arguments/sources) and you have <strong>a very sorry evolution of the web</strong>. </p><h2 id="%C2%A3-you-i-wont-do-what-you-tell-me">%$&#xA3;@ you, I won&apos;t do what you tell me</h2><p>My tiny act of rebellion going forward will be to keep using links in my posts. <strong>I choose to sacrifice reach for value</strong>.<br><br>Might <u><strong>you</strong></u> do the same?</p>]]></content:encoded></item><item><title><![CDATA[Asymmetric Communication Speeds]]></title><description><![CDATA[And why sending voice notes might come accross as a bit arrogant. ]]></description><link>https://www.acmconsulting.eu/post/voice-to-text-is-great/</link><guid isPermaLink="false">66fece576e26206fcbbe79e8</guid><category><![CDATA[Interesting]]></category><category><![CDATA[Productivity]]></category><dc:creator><![CDATA[Alex McFadyen]]></dc:creator><pubDate>Thu, 03 Oct 2024 19:47:12 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1718664485487-5aad5f72dff2?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wxMTc3M3wwfDF8c2VhcmNofDQzfHx2b2ljZSUyMHxlbnwwfHx8fDE3Mjc5NzUwMzJ8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=2000" medium="image"/><content:encoded><![CDATA[<h2 id="we-have-a-throughput-problem">We have a throughput problem</h2><img src="https://images.unsplash.com/photo-1718664485487-5aad5f72dff2?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wxMTc3M3wwfDF8c2VhcmNofDQzfHx2b2ljZSUyMHxlbnwwfHx8fDE3Mjc5NzUwMzJ8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=2000" alt="Asymmetric Communication Speeds"><p>Considering Words Per Minute (<strong>WPM</strong>), according to google, <strong>on average, </strong>people can:</p><ul><li><strong>Speak @ 110 - 150</strong> WPM</li><li><strong>Listen</strong> <strong>@ 110 - 150</strong> WPM <em>( but you can train yourself to increase this )</em></li><li><strong>Type @ 52 - 60 </strong>WPM</li><li><strong>Read @ 238 - 260</strong> WPM</li></ul><p>I&apos;m sure you&apos;ve<strong> felt this yourself</strong>. Typing not keeping up with your thoughts, or that frustrating feeling when you want someone to just get to the point, <strong>wishing you could x1.5</strong> (or even x1.75/x2 a person&apos;s real time speaking speed, like you do a podcast/audiobook).</p><p>I find it interesting,<strong> the slowest output</strong> (typing) is <strong>paired with the fastest input</strong> (reading). And, that <strong>speaking is x2 - x3 faster than typing</strong>, which brings me to...</p><h2 id="why-voice-notes-suck">Why voice notes suck</h2><p>There I said it.<strong> I can&apos;t be alone in thinking this, can I?</strong></p><p>We&apos;ve all been there, working away/doing something, and a voice note arrives. So now <strong>you are stuck listening for a few minutes</strong> to what could have been a simple text message that would take only seconds to read. It&apos;s not just inconvenient&#x2014;<strong>it&apos;s inefficient</strong>. And what if there was key information in the note like a phone number, now you have to listen to the whole thing again to transcribe the details yourself. Ugh!</p><p>Look, I get it. It&apos;s sometimes <strong>it&apos;s just way easier</strong> to ramble into your (micro)phone while you&apos;re multitasking or when you&apos;ve got a complex idea that you are thinking about or that would just be<strong> a pain to type out</strong>. It also lets you throw in all those <strong>vocal cues</strong> that text just can&apos;t capture in text, which can sometimes be a critical part of the message... <u><strong>but</strong></u>.</p><p>So by switching to a voice note, on an otherwise text based communication (e.g. Slack or WhatsApp), <strong>you are forcing the recipient to spend 110% - 170% more time to process your message vs a text message</strong>, and to compound things - &#xA0;you only took about 40% of the time to make that voice note, vs typing it!</p><blockquote>Arrogant. adjective. Having or revealing an exaggerated sense of one&apos;s own importance or abilities.</blockquote><p>So that sucks.</p><h2 id="voice-to-text-as-a-solution">Voice to Text as a solution</h2><p><strong>Voice to Text </strong>it&apos;s excellent now, and <a href="https://www.pcmag.com/picks/best-speech-to-text-apps-and-tools">built into most OSs</a> for free. Voice to Text, enables you to have the highest output throughput (@ 110+ WPM), and the receiver gets highest input by reading it (238 WPM). <strong>Win-Win.</strong></p><p>So next time you have a long message to communicate (or even just a large amount of text to write), try Voice to Text. It lets you <strong>get the idea down fast</strong>, but gives you the chance to <strong>then edit that idea</strong>, to make it easy to consume. (It can be quite humbling the first time you do it).</p><p>You could even <strong>dictate to a LLM</strong> and get<strong> the AI to clean up your ramblings</strong> into a coherent form, saving you time and still allowing the receiver to skim it/copy and paste/quote reply/use their own LLM to reply etc.</p><p>I&apos;ve been trying to use Voice to Text more in my day to day (part of this blog post was written this way), and<strong> it does help.</strong> Give it a try! </p><h2 id="but-what-about-automatic-transcripts">But what about automatic transcripts?</h2><p>Some tools do this, run voice to text for you, automatically and then show the <strong>transcript alongside the audio</strong>. </p><p>But, it&apos;s <strong>not much better than x2&apos;ing the playback speed</strong> (if your brain can cope with that). You might be able to <strong>jam more words into your brain per minute </strong>by increasing the playback speed; but the quality of the output tends to still be quite low, filler words, lack of formatting, <strong>lack of structure</strong>, meandering thoughts etc all make the result <strong>less valuable</strong> than a crafted text based message. </p><h2 id="lets-communicate-better-faster-more-effectively">Let&apos;s communicate better, faster, more effectively</h2><p>So, the next time you&apos;re tempted to send a voice note, or have a large amount of text to communicate; remember you have the options of <strong>Voice to Text</strong> and the power of a well crafted message. It&#x2019;s a small shift that can have a <strong>big impact on productivity</strong> and respect for each other&apos;s time.</p><p><strong>Give it a try! </strong>Your recipients (and future self) will thank you. After all, a little extra thought and time now can lead to a lot more clarity later!</p><p></p>]]></content:encoded></item></channel></rss>
+</code></pre><p><strong>4. Version your AI context like code</strong><br>Your <code>claude.md</code> and <code>.cursorrules</code> files should be in version control, reviewed in PRs, and updated when your architecture changes. It needs to be reviewed by your very best team members, as a bad change can be repeated 100&apos;s of times a day.</p><p><strong> 5. Have the AI help you keep things fresh</strong><br>Stale AI context can be worse than no context; it actively misleads your assistant into suggesting outdated patterns. If you find yourself correcting a mistake, ask the AI what it learned from the interaction and if it should/could update the rule/context to avoid similar pitfalls in the future.</p><p><strong><em>BONUS</em></strong>: Here is a Claude command you can use to help keep its context fresh: <a href="https://gist.github.com/a-c-m/f4cead5ca125d2eaad073dfd71efbcfc">reflection.md</a><br><br>Happy prompting. Living in the future is AWESOME. As <a href="https://en.wikiquote.org/wiki/William_Gibson">William Gibson</a> says <em><strong>&quot;The future is already here &#x2014; it&apos;s just not very evenly distributed.&quot;</strong></em> ... <strong>yet</strong>.<br><br><em>(post created with help from Claude.ai, but based on my ideas, with human editing and such).</em></p>]]></content:encoded></item><item><title><![CDATA[Social networks are killing the web]]></title><description><![CDATA[Without connections, it's just CompuServe 2.0]]></description><link>https://www.acmconsulting.eu/post/social-networks-are-killing-the-web/</link><guid isPermaLink="false">6708fbcbe7d4810863780830</guid><dc:creator><![CDATA[Alex McFadyen]]></dc:creator><pubDate>Fri, 11 Oct 2024 11:15:07 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1447856661108-b77bc4b6d984?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wxMTc3M3wwfDF8c2VhcmNofDI2fHxicm9rZW4lMjB3ZWJ8ZW58MHx8fHwxNzI4NjQzMDMxfDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=2000" medium="image"/><content:encoded><![CDATA[<img src="https://images.unsplash.com/photo-1447856661108-b77bc4b6d984?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wxMTc3M3wwfDF8c2VhcmNofDI2fHxicm9rZW4lMjB3ZWJ8ZW58MHx8fHwxNzI4NjQzMDMxfDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=2000" alt="Social networks are killing the web"><p><strong>Remember CompuServe</strong>? If you do, you probably know that it was one of the early giants of the internet era, f<strong>amous for its CD-ROMs and walled garden strategy</strong>. Like CompuServe&apos;s approach to keeping users locked into their ecosystem, today&apos;s social media platforms are attempting something similar, by punishing links.</p><p>&quot;Killing&quot; is a little hyperbolic perhaps, and the CompuServe reference will only mean something if you are of a certain age; but the point is valid. </p><h2 id="attention-retention-by-all-possible-means">Attention retention by all possible means</h2><p>These platforms want you to <strong>stay on their domain</strong>, interacting with their content and consuming their ads. For them, <strong>a link to another website represents a threat</strong>. So they punish posts containing links, in some cases outright ban them!</p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://www.oneupweb.com/blog/why-you-shouldnt-always-post-links-on-facebook/"><div class="kg-bookmark-content"><div class="kg-bookmark-title">Does Facebook Penalize Posts with Links? &#x2013; Oneupweb</div><div class="kg-bookmark-description">Monetizing social media platforms is all about keeping users on the site or app. Find out why Facebook penalizes posts with links &#x2013; and what to do about it!</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://www.oneupweb.com/wp-content/uploads/2016/08/ouw_favicon_480-300x300.png" alt="Social networks are killing the web"><span class="kg-bookmark-author">Oneupweb</span><span class="kg-bookmark-publisher">Oneupweb</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://www.oneupweb.com/wp-content/uploads/2023/08/OUW_BrandPhoto-26-scaled-e1728332904953.jpg" alt="Social networks are killing the web"></div></a></figure><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://www.socialmediatoday.com/news/twitter-implements-new-rules-banning-links-to-other-social-platforms/639047/"><div class="kg-bookmark-content"><div class="kg-bookmark-title">Twitter Implements New Rules Banning Links to Other Social Platforms</div><div class="kg-bookmark-description">Team Elon has pulled another controversial move, as they continue to re-shape the platform.</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://www.socialmediatoday.com/apple-touch-icon.png?v=2" alt="Social networks are killing the web"><span class="kg-bookmark-author">Social Media Today</span><span class="kg-bookmark-publisher">Andrew Hutchinson</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://www.socialmediatoday.com/imgproxy/pS3CnLw35jgohWVMlfz0-jR-yV-bhSyAS6iUdCfNLgw/g:ce/rs:fit:770:435/bG9jYWw6Ly8vZGl2ZWltYWdlL3R3aXR0ZXJfbG9nb19wV21NRnR2LnBuZw==.webp" alt="Social networks are killing the web"></div></a></figure><p><strong>The result</strong>? Many content creators (and even casual users), whose want to reach the largest possible audience, are<strong> forced to self-censor</strong>. Knowing that posts with links might have their reach reduced, they simply stop including them. This means fewer connections between information sources and less of the open, interconnected web that we have grown accustomed to.</p><p>Some try <strong>clever workarounds</strong>, like posting links in the comments instead of the main post. But even this tactic seems to be getting detected and punished by the algorithms. The message is clear: <strong>Links are not welcome</strong>.</p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://espirian.co.uk/linkedin-links-in-posts-or-comments/"><div class="kg-bookmark-content"><div class="kg-bookmark-title">LinkedIn links in posts or comments?</div><div class="kg-bookmark-description">Where should you put your links? Pros and cons of each method.</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://espirian.co.uk/wp-content/uploads/2023/06/cropped-favicon-32x32-1-270x270-1.webp" alt="Social networks are killing the web"><span class="kg-bookmark-author">John Espirian</span><span class="kg-bookmark-publisher">John Espirian</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://secure.gravatar.com/avatar/e09134295f2da1bc46c876dc1ccfaf64?s=96&amp;d=mm&amp;r=g" alt="Social networks are killing the web"></div></a></figure><h2 id="why-care-about-links">Why care about links?</h2><p>The World Wide Web (specifically HTTP) was built on the idea of links. </p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://en.wikipedia.org/wiki/HTTP"><div class="kg-bookmark-content"><div class="kg-bookmark-title">HTTP - Wikipedia</div><div class="kg-bookmark-description"></div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://en.wikipedia.org/static/apple-touch/wikipedia.png" alt="Social networks are killing the web"><span class="kg-bookmark-author">Wikimedia Foundation, Inc.</span><span class="kg-bookmark-publisher">Contributors to Wikimedia projects</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/HTTP_logo.svg/1200px-HTTP_logo.svg.png" alt="Social networks are killing the web"></div></a></figure><p>HTTP stands for <strong><a href="https://en.wikipedia.org/wiki/Hypertext">Hypertext</a></strong> Transfer Protocol, Hypertext is a way to link and access information of various kinds as a web of nodes - it&apos;s foundational building block of what makes the web the web. If we no longer have links to other nodes, is it still a web? Imagine Wikipedia without citations? </p><p><strong>The slow </strong>(or not so slow)<strong> death of the World Wide Web has started.</strong> &#xA0;(Sorry, more hyperbole - perhaps?)</p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://tech.slashdot.org/story/24/10/07/1938237/the-slow-death-of-the-hyperlink"><div class="kg-bookmark-content"><div class="kg-bookmark-title">The Slow Death of the Hyperlink - Slashdot</div><div class="kg-bookmark-description">The decline of journalism has been attributed to many factors, from slow adaptation to the internet to the dominance of tech giants in advertising. But a veteran journalist offers a new perspective: the death of the hyperlink could be changing the fundamental nature of the internet, with significant&#x2026;</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://tech.slashdot.org/favicon.ico" alt="Social networks are killing the web"><span class="kg-bookmark-author">Slashdot</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://a.fsdn.com/sd/topics/internet_64.png" alt="Social networks are killing the web"></div></a></figure><p>By punishing posts that link out, they are <strong>breaking the very connections that make the internet great</strong>. Combine this with the deluge of hallucinated AI content (which is then harder to fact-check without links as supporting arguments/sources) and you have <strong>a very sorry evolution of the web</strong>. </p><h2 id="%C2%A3-you-i-wont-do-what-you-tell-me">%$&#xA3;@ you, I won&apos;t do what you tell me</h2><p>My tiny act of rebellion going forward will be to keep using links in my posts. <strong>I choose to sacrifice reach for value</strong>.<br><br>Might <u><strong>you</strong></u> do the same?</p>]]></content:encoded></item></channel></rss>
